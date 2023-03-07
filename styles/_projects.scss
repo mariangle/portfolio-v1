@@ -1,0 +1,32 @@
+.featured{
+    padding: 10rem 0rem;
+    button{
+        padding: 1rem 1rem;
+    }
+}
+.project{
+    padding: 5rem 0rem;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.project-text{
+    @include flex(center, flex-start, column);
+    flex: 1 2 20rem;
+    gap: 1rem;
+    margin-left: 5rem;
+}
+
+.project-img{
+    @include flex(center, flex-start, column);
+    flex: 2 1 20rem;
+    position: relative;
+    img{
+        width: 100%;
+        max-width: 550px;
+        object-fit: cover;
+    }
+}

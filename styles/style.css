@@ -1,0 +1,343 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+li,
+button,
+label,
+input,
+p {
+  color: black;
+  font-size: 1.6rem;
+}
+
+a {
+  color: white;
+}
+
+h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+h4,
+h5 {
+  font-size: 2rem;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  background: none;
+  cursor: pointer;
+  z-index: 1;
+  padding: 2rem 3rem;
+}
+
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.5s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 75% 75%;
+  z-index: 100;
+}
+
+.cursor.nav-active {
+  background: rgb(52, 88, 153);
+  transform: scale(3);
+}
+
+.cursor.link-active {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(2);
+}
+
+.nav-header {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: auto;
+  padding: 2rem 5rem;
+  background-color: rgba(0, 0, 0, 0);
+  transition: background-color 0.5s ease-in-out;
+}
+.nav-head h1 {
+  font-size: 2rem;
+  color: white;
+  font-weight: 100;
+}
+.nav-head ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.nav-head ul li:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+.nav-line {
+  height: 1px;
+  width: 95%;
+  margin: auto;
+  margin-top: 1px;
+  background: white;
+}
+
+.nav-head.scrolled {
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+.logo h5 {
+  height: 100%;
+  font-size: 1.6rem;
+  font-weight: lighter;
+}
+.logo img {
+  margin-top: 0.5rem;
+  height: 20px;
+}
+
+.line1, .line2 {
+  width: 3rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: white;
+  pointer-events: none;
+}
+
+.burger {
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.nav-bar {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 10rem;
+  background: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: row;
+  flex-wrap: wrap;
+  opacity: 1;
+  clip-path: circle(50px at 100% -10%);
+  -webkit-clip-path: circle(50px at 100% -10%);
+}
+
+.nav-links {
+  flex: 1;
+  font-size: 3rem;
+  flex-basis: 30rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  gap: 0rem;
+}
+.nav-links li a {
+  color: black;
+  font-size: 8vw;
+  font-family: "Playfair Display", serif;
+}
+
+.nav-socials {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+.nav-socials a {
+  color: black;
+  font-size: 1.6rem;
+}
+
+.hero {
+  background: linear-gradient(rgba(5, 21, 43, 0.8), transparent), url("../img/hero.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.hero-intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  gap: 1rem;
+}
+.hero-intro h1 {
+  padding: 2rem;
+}
+.hero-intro ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+.hero-intro ul img {
+  height: 35px;
+  margin-bottom: 2rem;
+}
+.hero-intro button {
+  color: white;
+  border: 2px solid white;
+  cursor: pointer;
+  z-index: 101;
+}
+
+.featured {
+  padding: 10rem 0rem;
+}
+.featured button {
+  padding: 1rem 1rem;
+}
+
+.project {
+  padding: 5rem 0rem;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+
+.project-text {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  flex: 1 2 20rem;
+  gap: 1rem;
+  margin-left: 5rem;
+}
+
+.project-img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  flex: 2 1 20rem;
+  position: relative;
+}
+.project-img img {
+  width: 100%;
+  max-width: 550px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background: #0f0f0f;
+  padding: 0rem 1rem 5rem 1rem;
+}
+
+.footer-div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5rem;
+  text-align: left;
+}
+.footer-div ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 2rem;
+}
+.footer-div li {
+  transition: all 0.2s ease-in-out;
+}
+.footer-div li:hover {
+  transform: scale(1.2);
+}
+.footer-div img {
+  height: 30px;
+}
+.footer-div a {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+}
+
+@media screen and (max-height: 600px) {
+  .hero {
+    min-height: 500px; /* Set a fixed height for screens smaller than 600px height */
+  }
+}
+@media screen and (max-width: 800px) {
+  .nav-header ul li {
+    display: none;
+  }
+  .project-text {
+    margin-left: 0rem;
+  }
+}/*# sourceMappingURL=style.css.map */
