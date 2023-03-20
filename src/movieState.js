@@ -1,4 +1,4 @@
-//Import Images
+// import Images
 import athlete from './img/athlete-small.png';
 import goodtimes from './img/goodtimes-small.png';
 import theracer from './img/theracer-small.png';
@@ -15,19 +15,19 @@ export const MovieState = () => {
       url: '/projects/the-athlete',
       awards: [
         {
-          title: 'Truly A masterpiece',
+          title: 'titel',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'Fresh look on a brutal sport.',
+          title: 'titel',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'It’s okay lmao.',
+          title: 'titel',
           description:
-            'dum Ipsum is simply dummy text of the printing and typesetting industry.”',
+            '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
       ],
     },
@@ -38,17 +38,17 @@ export const MovieState = () => {
       secondaryImg: goodtimes2,
       awards: [
         {
-          title: 'Truly A masterpiece',
-          description:
-            'virker Ipsum is simply dummy text of the printing and typesetting industry.”',
-        },
-        {
-          title: 'Fresh look on a brutal sport.',
+          title: 'titel',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'It’s okay lmao.',
+          title: 'titel',
+          description:
+            '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
+        },
+        {
+          title: 'titel',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
@@ -61,17 +61,17 @@ export const MovieState = () => {
       secondaryImg: theracer2,
       awards: [
         {
-          title: 'Truly A masterpiece',
+          title: 'titel',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'Fresh look on a brutal sport.',
+          title: 'titel',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'It’s okay lmao.',
+          title: 'titel',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },

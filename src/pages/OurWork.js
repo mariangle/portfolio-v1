@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+// components
+import {useScroll} from "../components/useScroll";
+import ScrollTop from '../components/ScrollTop';
+// router
 import { Link } from 'react-router-dom';
 // images
 import athlete from "../img/athlete-small.png"
 import theracer from "../img/theracer-small.png"
 import goodtimes from "../img/goodtimes-small.png"
-
 // animations
 import {motion} from "framer-motion";
 import {swoop, sliderContainer, slider, pageAnimation, fadeAnim, photoAnim, lineAnim} from "../animation";
-
-import {useScroll} from "../components/useScroll";
-import ScrollTop from '../components/ScrollTop';
-
 
 function OurWork() {
   const [element, controls] = useScroll();
@@ -76,7 +75,6 @@ background: #277DFF;
 const Frame4 = styled(Frame1)`
 background: #FFC200;
 `
-
 
 const Work = styled(motion.div)`
 min-height: 100vh;

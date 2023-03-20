@@ -1,12 +1,13 @@
-import React from "react";
-import home1 from "../img/main.svg";
-import {About, Description, Image, Hide} from "../styles";
+import React from "react"
+import home1 from "../img/main.svg"
+// about section components
+import {About, Description, Image, Hide} from "../styles"
+import Wave from "./Wave"
 // framer motion
-import {motion} from "framer-motion";
+import {motion} from "framer-motion"
 import {titleAnim, fadeAnim, photoAnim} from "../animation"
-import Wave from "./Wave";
-import {Link} from "react-router-dom"
 
+import {Link} from "react-router-dom"
 
 const AboutSection = () => {
     return(
@@ -34,6 +35,5 @@ const AboutSection = () => {
         </About>
     )
 }
-
 
 export default AboutSection;

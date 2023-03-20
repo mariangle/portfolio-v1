@@ -1,49 +1,39 @@
 import React, {useState} from 'react';
-// global styles
-import GlobalStyle from './components/GlobalStyles';
-// import pages
-import AboutUs from './pages/AboutUs';
-import Nav from './components/Nav';
-import OurWork from "./pages/OurWork";
-import ContactUs from "./pages/ContactUs";
-import MovieDetail from './pages/MovieDetails';
-import { ThemeProvider } from 'styled-components';
-import Theme from './components/Theme';
+// import components
+import Theme from './components/Theme'
 import Cursor from "./Cursor"
-
-
-// animations
-import { AnimatePresence } from 'framer-motion';
-
-//router
-
-import {Routes, Route, useLocation } from "react-router-dom"
+import GlobalStyle from './components/GlobalStyles'
 import ScrollTop from "./components/ScrollTop";
-
-
+// import pages
+import AboutUs from './pages/AboutUs'
+import Nav from './components/Nav'
+import Projects from "./pages/OurWork"
+import ProjectDetail from './pages/MovieDetails'
+import Contact from "./pages/ContactUs"
+//router
+import {Routes, Route, useLocation } from "react-router-dom"
 
 function App() {
   const [theme, setTheme] = useState('light');
+  const location = useLocation();
 
   function toggleTheme() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   }
 
-  const location = useLocation();
-
   return (
     <div className="App">
       <Theme theme={theme}>
-      <Cursor ></Cursor>
+        <Cursor/>
         <GlobalStyle />
         <Nav toggleTheme={toggleTheme} />
         <ScrollTop />
         <Routes location={location}>
           <Route path="/" element={<AboutUs />} />
           <Route path="/about" element={<AboutUs />} />
-          <Route path="/projects" element={<OurWork />} />
-          <Route path="/projects/:id" element={<MovieDetail />} />
-          <Route path="/contact" element={<ContactUs />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </Theme>
     </div>

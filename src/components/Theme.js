@@ -24,8 +24,6 @@ const darkTheme = {
 };
 
 function Theme({ children, theme }) {
-  console.log(theme); // check if it's receiving the theme prop correctly
-
   return <ThemeProvider theme={theme === 'dark' ? darkTheme : lightTheme}>{children}</ThemeProvider>;
 }
 

@@ -1,22 +1,20 @@
 import React from "react";
+// import icons
 import framerMotion from "../icons/motion.png"
 import sass from "../icons/sass.svg"
 import js from "../icons/javascript.svg"
 import react from "../icons/react.svg"
-
 import html from "../icons/html.png"
 import css from "../icons/css.png"
 import csharp from "../icons/csharp.png"
 import sql from "../icons/sql.png"
 import sc from "../icons/sc.png"
 import gsap from "../icons/gsap.png"
-
-
 // styles
-
 import {About, Description, Image, } from "../styles";
 import styled from "styled-components";
-import { fadeAnim, slideLeft, slideRight} from "../animation";
+// import animations
+import { slideLeft, slideRight} from "../animation";
 import { useScroll } from "./useScroll";
 import {motion} from "framer-motion";
 
@@ -64,8 +62,7 @@ const ServicesSection = () => {
                             <img src={gsap} alt="" />   
                             <img src={csharp} alt="" />
                             <img src={sql} alt="" />
-                            <img src={sc} alt="" />
-                            
+                            <img src={sc} alt="" />        
                         </div> 
                     </Test>
                 </Services>
@@ -92,7 +89,6 @@ img{
     margin: 2rem;
 }
 `
-
 const Services = styled(About)`
 h2{
     padding-bottom: 5rem;
@@ -104,7 +100,6 @@ p{
     align-items: center;
 }
 `
-
 const Cards = styled.div`
 display: flex;
 flex-wrap: wrap;
@@ -112,7 +107,6 @@ flex-wrap: wrap;
     justify-content: center;
 }
 `
-
 const Card = styled.div`
 flex-basis: 20rem;
 img{
@@ -130,6 +124,4 @@ img{
     }
 }
 `
-
-
 export default ServicesSection;

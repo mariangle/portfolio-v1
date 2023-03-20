@@ -1,10 +1,13 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import {Link} from "react-router-dom"
+// animations 
 import { motion } from 'framer-motion'
-import { useLocation } from 'react-router-dom'
+// import icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+// router
+import { useLocation } from 'react-router-dom'
+import {Link} from "react-router-dom"
 
 const Nav = ({toggleTheme}) => {
     const {pathname} = useLocation();
@@ -32,7 +35,6 @@ const Nav = ({toggleTheme}) => {
                     </div>
                     <input type="checkbox" onClick={toggleTheme}/>
                     <span className="ball"></span>
-                    
                 </Label>
             </li>
             </ul>

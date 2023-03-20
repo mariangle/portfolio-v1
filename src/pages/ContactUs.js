@@ -1,9 +1,9 @@
-import React from 'react';
-import {motion} from "framer-motion";
-import { pageAnimation, titleAnim } from "../animation";
-import styled from 'styled-components';
-
-
+import React from 'react'
+// animations
+import {motion} from "framer-motion"
+import { pageAnimation, titleAnim } from "../animation"
+// styles
+import styled from 'styled-components'
 
 const ContactUs = () => {
   return (
@@ -67,7 +67,6 @@ border-radius: 50%;
 width: 1rem;
 height: 1rem;
 background: ${props => props.theme.mainColor};
-
 `
 
 const Social = styled(motion.div)`

@@ -7,7 +7,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   
-  
   html {
     @media (max-width: 1700px) {
       font-size: 75%;
@@ -90,6 +89,6 @@ const GlobalStyle = createGlobalStyle`
     border: transparent;
     border-radius: 8px;
 }
-`;
+`
 
 export default GlobalStyle;

@@ -1,10 +1,12 @@
-import React, {useState} from "react";
-import styled from "styled-components";
-import {About} from "../styles";
-import Toggle from "./Toggle";
-import { LayoutGroup } from "framer-motion";
-import {slideUp} from "../animation";
-import { useScroll } from "./useScroll";
+import React, {useState} from "react"
+import styled from "styled-components"
+// components
+import {About} from "../styles"
+import Toggle from "./Toggle"
+import { useScroll } from "./useScroll"
+// animations
+import { LayoutGroup } from "framer-motion"
+import {slideUp} from "../animation"
 
 const FaqSection = () => {
     const [element, controls] = useScroll();

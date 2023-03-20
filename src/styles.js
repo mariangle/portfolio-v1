@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { motion } from "framer-motion";
 
-
 export const About = styled(motion.div)`
 z-index: 2;
 min-height: 90vh;
@@ -30,7 +29,6 @@ h2{
     }
 }
 `
-
 export const Image = styled(motion.div)`
 z-index: 2;
 flex: 1;

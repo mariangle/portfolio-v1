@@ -1,20 +1,18 @@
 import React, {useState, useEffect} from 'react'
-import styled from 'styled-components';
-import { useLocation } from 'react-router-dom';
+// components
 import {MovieState} from "../movieState"
-
+import styled from 'styled-components';
+// rout
+import { useLocation } from 'react-router-dom';
 // import anim
-
 import {motion} from "framer-motion";
 import { pageAnimation } from "../animation";
-
 
 function MovieDetails() {
   const url = useLocation();
   const [movies, setMovies] = useState(MovieState);
   const [movie, setMovie] = useState(null);
 
-  // useEffect
   useEffect(() => {
     const currentMovie = movies.filter((stateMovie) => stateMovie.url === url.pathname );
     setMovie(currentMovie[0]);

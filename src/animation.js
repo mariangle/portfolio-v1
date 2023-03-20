@@ -49,7 +49,6 @@ export const slideRight = {
         }
     }
 }
-
 export const titleAnim = {
     hidden: {y: 200},
     show: {
@@ -80,7 +79,6 @@ export const lineAnim = {
         transition: {duration: 1}
     }
 }
-
 export const slider = {
     hidden: {x: "-130%", skew: "45deg"},
     show: {
@@ -89,7 +87,6 @@ export const slider = {
         transition: {ease: "easeOut", duration: 1}
     }
 }
-
 export const sliderContainer  = {
     hidden: {opacity: 1},
     show: {
@@ -97,9 +94,8 @@ export const sliderContainer  = {
         transition: {ease: "easeOut", staggerChildren: 0.15}
     }
 }
-
-export const slideUp = { //navnskift? scale? eller scrollreveal
-    hidden: {opacity: 0, scale: 1.2},
+export const slideUp = { 
+    hidden: {opacity: 1, y: 200},
     show: {
         opacity: 1,
         scale: 1,
@@ -118,9 +114,8 @@ export const slideUp = { //navnskift? scale? eller scrollreveal
         }
     }
 }
-
 export const swoop = {
-    hidden: {width: "0%"},
+    hidden: {width: "50%"},
     show: {
         width: "100%",
         transition: {ease: "easeOut", duration: 1}
