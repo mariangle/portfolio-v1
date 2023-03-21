@@ -17,21 +17,15 @@ const ContactUs = () => {
         <Hide>
           <Social variants={titleAnim}>
             <Circle/>
-            <h3>marianguyenle17@gmail.com</h3>
+            <h3>email: marianguyenle17@gmail.com</h3>
           </Social>
         </Hide>
         <Hide>
           <Social variants={titleAnim}>
             <Circle/>
-            <h3>senc mesagge aks</h3>
+            <h3>tlf: +45 31314341</h3>
           </Social>
         </Hide>
-        <Hide>
-          <Social variants={titleAnim}>
-            <Circle/>
-            <h3>senc mesagge aks</h3>
-          </Social> 
-          </Hide>
       </div>
       </ContactStyle>
   )

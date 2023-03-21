@@ -9,7 +9,7 @@ const Nav = ({toggleTheme}) => {
     const {pathname} = useLocation();
   return (
     <StyledNav>
-        <h1><Link to="/" id="logo">&lt;<span>Maria</span> /&gt;</Link></h1>
+        <h1><Link to="/" id="logo"> &lt;<span>Maria</span> /&gt;</Link></h1>
         <ul>
             <li>
                <Link className="link" to="/home">HOME</Link>
@@ -68,7 +68,7 @@ const Label = styled.label`
       width: 10px;
       height: 10px;
       &:nth-child(2) {
-        color: white;
+        color: gold;
       }
     }
   }

@@ -7,7 +7,7 @@ import { titleAnim, fadeAnim } from "../animation";
 import Wave from "./Wave";
 
 
-const AboutSection = () => {
+const HeroSection = () => {
     return(
         <About>
             <Description>
@@ -149,4 +149,4 @@ justify-content: flex-start;
 }
 `
 
-export default AboutSection;
+export default HeroSection;

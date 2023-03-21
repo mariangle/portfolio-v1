@@ -20,7 +20,7 @@ function App() {
 
   function getTitle() {
     const path = pathname;
-    const title = path.split('/').filter((str) => str !== '').map((str) => str.charAt(0).toUpperCase() + str.slice(1)).join('');
+    const title = path.split('/').filter((str) => str !== '').map((str) => str.charAt(0).toUpperCase() + str.slice(1)).join('/');
     return `${title}`;
   }
 

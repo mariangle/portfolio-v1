@@ -15,63 +15,63 @@ export const MovieState = () => {
       url: '/projects/the-athlete',
       awards: [
         {
-          title: 'titel',
+          title: 'titelsad',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'titel',
+          title: 'titelasdas',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'titel',
+          title: 'titeasdl',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
       ],
     },
     {
-      title: 'name of project',
+      title: 'name of project2',
       mainImg: goodtimes,
       url: '/projects/good-times',
       secondaryImg: goodtimes2,
       awards: [
         {
-          title: 'titel',
+          title: 'titel1',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'titel',
+          title: 'titel2',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'titel',
+          title: 'titel3',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
       ],
     },
     {
-      title: 'name of project',
+      title: 'name of project3',
       mainImg: theracer,
       url: '/projects/the-racer',
       secondaryImg: theracer2,
       awards: [
         {
-          title: 'titel',
+          title: 'titasel',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'titel',
+          title: 'tisadtel',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },
         {
-          title: 'titel',
+          title: 'titdsael',
           description:
             '“Lorem Ipsum is simply dummy text of the printing and typesetting industry.”',
         },

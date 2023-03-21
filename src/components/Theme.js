@@ -28,7 +28,7 @@ const darkTheme = {
   gradientColor: "linear-gradient(45deg, #52a2ff, #b474f8)",
   scrollBar: "rgba(70, 69, 69, 0.3);",
   keyword: "#326cb8",
-  className: "#389d89",
+  className: "#389d89"
 };
 
 function Theme({ children, theme }) {

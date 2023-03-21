@@ -83,7 +83,7 @@ h3{
 }
 .line{
   width: 100%;
-  background: #23d997;
+  background: ${props => props.theme.mainColor };
   height: 0.5rem;
   margin: 1rem 0rem;
 }
