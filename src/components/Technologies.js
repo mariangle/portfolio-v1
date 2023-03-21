@@ -11,20 +11,20 @@ import sql from "../icons/sql.png"
 import sc from "../icons/sc.png"
 import gsap from "../icons/gsap.png"
 // styles
-import {About, Description, Image, } from "../styles";
+import {About, Description} from "../styles";
 import styled from "styled-components";
 // import animations
-import { slideLeft, slideRight} from "../animation";
+import { slideLeftVariants, slideRight} from "../animation";
 import { useScroll } from "./useScroll";
 import {motion} from "framer-motion";
 
 
 const ServicesSection = () => {
-    const [element, controls] = useScroll();
+    const [ref, controls] = useScroll();
     return( 
             <div>
                 <Services>
-                    <Description variants={slideRight} animate={controls} initial="hidden" ref={element}>
+                    <Description variants={slideRight} animate={controls} initial="hidden" ref={ref}>
                         <h2>Recent <span>technologies</span> I've used</h2>
                         <Cards>
                             <Card>
@@ -53,24 +53,21 @@ const ServicesSection = () => {
                             </Card>
                         </Cards>
                     </Description>
-                    <Test variants={slideLeft} animate={controls} initial="hidden" ref={element}>
-                        <div className="Test">
-                        <h3>Other Technologies</h3>
+                    <Techstack variants={slideLeftVariants.slideLeftWithDelay} animate={controls} initial="hidden" ref={ref} >
+                            <h3>Techstack</h3>
                             <img src={html} alt="" />
                             <img src={css} alt="" />
                             <img src={js} alt="" />
                             <img src={gsap} alt="" />   
                             <img src={csharp} alt="" />
                             <img src={sql} alt="" />
-                            <img src={sc} alt="" />        
-                        </div> 
-                    </Test>
+                            <img src={sc} alt="" />
+                    </Techstack>
                 </Services>
             </div>
     )
 }
-
-const Test = styled(motion.div)`
+const Techstack = styled(motion.div)`
 flex: 1;
 margin-top: 5rem;
 align-items: center;
@@ -79,25 +76,32 @@ display: flex;
 border-radius: 20px;
 background: ${props => props.theme.secondBackground};
 padding: 2rem;
-h3{
-    margin: 2rem;
-    font-size: 1.6rem;
+display: block;
 
+h3{
+    margin: 2rem 0rem;
+    font-size: 1.6rem;
 }
 img{
-    height: 40px;
-    margin: 2rem;
+    height: 35px;
+    margin-right: 1rem;
 }
 `
 const Services = styled(About)`
+min-height: 0vh;
+padding: 0rem 10rem 5rem 10rem;
 h2{
     padding-bottom: 5rem;
+    @media (max-width: 550px){
+    text-align: left;
+}
 }
 p{
     padding: 2rem 0rem 4rem 0rem;
 }
 @media (max-width: 1200px){
     align-items: center;
+    padding: 2rem 2rem;
 }
 `
 const Cards = styled.div`

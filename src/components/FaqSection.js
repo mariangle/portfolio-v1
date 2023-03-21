@@ -6,33 +6,27 @@ import Toggle from "./Toggle"
 import { useScroll } from "./useScroll"
 // animations
 import { LayoutGroup } from "framer-motion"
-import {slideUp} from "../animation"
+import {titleAnim} from "../animation"
 
 const FaqSection = () => {
-    const [element, controls] = useScroll();
+    const [ref, controls] = useScroll();
     return(
-        <Faq variants={slideUp} ref={element} animate={controls} initial="hidden">
+        <Faq variants={titleAnim} ref={ref} animate={controls} initial="hidden">
             <LayoutGroup>
                 <h2>Questions <span>FAQ</span></h2>
-                <Toggle className="question" title="how i start">
+                <Toggle className="question" title="Question">
                         <div className="answer">
                             <p>Lorem ipsum dolor sit amet.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi!</p>
                     </div>
                 </Toggle>
-                <Toggle className="question" title="daily schedule">
+                <Toggle className="question" title="Question">
                         <div className="answer">
                             <p>Lorem ipsum dolor sit amet.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi!</p>
                         </div>
                 </Toggle>
                 <Toggle className="question" title="question">
-                        <div className="answer">
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi!</p>
-                        </div>
-                </Toggle>
-                <Toggle className="question" title="what products offer">
                         <div className="answer">
                             <p>Lorem ipsum dolor sit amet.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi!</p>

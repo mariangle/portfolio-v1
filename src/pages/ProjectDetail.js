@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 // components
-import {MovieState} from "../movieState"
+import {MovieState} from "../projectState"
 import styled from 'styled-components';
 // rout
 import { useLocation } from 'react-router-dom';
@@ -45,18 +45,22 @@ const Details = styled(motion.div)`
 
 `
 const HeadLine = styled.div`
-min-height: 90vh;
+width: 80vw;
+margin: auto;
+min-height: 40vh;
 padding-top: 20vh;
 position: relative;
+display: flex;
+justify-content: center;
 h2{
-  position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -10%);
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -10%);
 }
 img{
-  width: 100%;
-  height: 70vh;
+  width: 50%;
+  height: 50%;
   object-fit: cover;
 }
 `
@@ -73,7 +77,7 @@ justify-content: space-around;
 `
 
 const AwardStyle = styled.div`
-padding: 5rem;
+padding: 0 5rem;
 h3{
   font-size: 2rem;
 }
@@ -92,7 +96,7 @@ const ImageDisplay = styled.div`
 min-height: 50vh;
 img{
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   object-fit: cover;
 }
 `

@@ -1,5 +1,5 @@
 // import Images
-import athlete from './img/athlete-small.png';
+import project1 from './img/project1.png';
 import goodtimes from './img/goodtimes-small.png';
 import theracer from './img/theracer-small.png';
 import athlete2 from './img/athlete2.png';
@@ -10,7 +10,7 @@ export const MovieState = () => {
   return [
     {
       title: 'name of project',
-      mainImg: athlete,
+      mainImg: project1,
       secondaryImg: athlete2,
       url: '/projects/the-athlete',
       awards: [

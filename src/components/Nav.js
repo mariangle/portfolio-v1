@@ -69,7 +69,7 @@ input {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: black;
+    color: #2d2e32;
     .icon{
         width: 10px;
         height: 10px;
@@ -101,7 +101,7 @@ padding: 1rem 0rem;
   justify-content: space-between;
   align-items: center;
   position: sticky;
-  z-index: 999;
+  z-index: 9999;
   top: 0;
   h1 {
     display: flex; /* Add this line */
@@ -126,7 +126,6 @@ li{
     position: relative;
     a{
         left: 0%;
-        font-size: 1rem;
     }
 }
 #logo{
@@ -165,8 +164,8 @@ li{
 }
 @media (max-width: 1200px){
     ul{
-    padding: 1rem 1rem 1rem 3rem;
-    gap: 5rem;
+    padding: 1.5rem 5rem 1.5rem 5rem;
+    gap: 3rem;
     a{
         font-size: 1rem;
     }
@@ -176,7 +175,7 @@ li{
 
 const Line = styled(motion.div)`
 height: 0.2rem;
-background: ${props => props.theme.textColor};
+background: ${props => props.theme.mainColor};
 width: 0%;
 position: absolute;
 bottom: -50%;

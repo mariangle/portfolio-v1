@@ -19,14 +19,8 @@ flex: 1 1 30rem;
 flex-wrap: wrap;
 padding-right: 5rem;
 z-index: 2;
-h2{
-    font-weight: lighter;
-}
 @media (max-width: 1300px){
     padding: 0;
-    button{
-        margin: 2rem 0rem 5rem 0rem;
-    }
 }
 `
 export const Image = styled(motion.div)`

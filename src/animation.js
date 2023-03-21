@@ -19,21 +19,35 @@ export const pageAnimation = {
         }
     }
 }
-export const slideLeft = {
-    hidden: {x: 200, opacity: 0},
-    show: {
+export const slideLeftVariants = {
+    slideLeft: {
+      hidden: { x: 200, opacity: 0 },
+      show: {
         x: 0,
         opacity: 1,
         transition: { duration: 0.75, ease: "easeOut" }
-    },
-    exit: {
+      },
+      exit: {
         x: 200,
         opacity: 0,
-        transition: {
-            duration: 0.5
-        }
+        transition: { duration: 0.5 }
+      }
+    },
+    slideLeftWithDelay: {
+      hidden: { x: 200, opacity: 0 },
+      show: {
+        delay: 3,
+        x: 0,
+        opacity: 1,
+        transition: { duration: 0.75, ease: "easeOut", delay: 0.5 }
+      },
+      exit: {
+        x: 200,
+        opacity: 0,
+        transition: { duration: 0.5 }
+      }
     }
-}
+  };
 export const slideRight = {
     hidden: {x: -200, opacity: 0},
     show: {
@@ -55,6 +69,14 @@ export const titleAnim = {
         opacity: 1,
         y: 0,
         transition: { duration: 0.75, ease: "easeOut" }
+    },
+        exit: {
+        opacity: 0,
+        y: 200,
+        transition:
+        {
+            duration: 0.5
+        }
     }
 }
 export const fadeAnim = {
@@ -65,11 +87,16 @@ export const fadeAnim = {
     }
 }
 export const photoAnim = {
-    hidden: {scale: 1.5, opacity: 0},
+    hidden: { x: 200, opacity: 0 },
     show: {
-        opacity: 1,
-        scale: 1,
-        transition: {ease: "easeOut", duration: 0.75 }
+      delay: 3,
+      x: 0,
+      opacity: 1,
+      transition: { duration: 0.75, ease: "easeOut", delay: 1 }
+    },
+    exit: {
+      x: 200,
+      opacity: 0,
     }
 }
 export const lineAnim = {

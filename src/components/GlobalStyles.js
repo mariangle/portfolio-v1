@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-  * {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    transition: all 0.2s ease;
     letter-spacing: 1px;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
@@ -22,17 +23,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
+    letter-spacing: 1px;
     color: ${props => props.theme.headerColor};
-    font-weight: bold;
     font-size: 1.1rem;
     cursor: pointer;
     padding: 1rem 2rem;
-    border: 3px solid ${props => props.theme.headerColor};
+    border: 2px solid ${props => props.theme.mainColor};
     background: transparent;
     transition: all 0.5s ease;
     &:hover{
-        background-color: ${props => props.theme.headerColor    };
-        color: ${props => props.theme.backgroundColor};
+        background-color: transparent;
     }
   }
   a{
@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
   }
   p {
     color: ${props => props.theme.textColor};
-    padding: 3rem 0rem;
+    padding: 2rem 0rem 3rem 0rem;
     font-size: 1.4rem;
     line-height: 150%;
   }
@@ -53,13 +53,19 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h2 {
-    font-weight: lighter;
+    font-weight: bolder;
     font-size: 3rem;
+    color: ${props => props.theme.headerColor};
+    span{
+      background-image:${props => props.theme.gradientColor};
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
   }
   h3{
     font-size: 2rem;
   }
-
   h4 {
     font-weight: bold;
     font-size: 2rem;
@@ -71,7 +77,9 @@ const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0px;
   }
 
   * {

@@ -5,11 +5,11 @@ import Cursor from "./Cursor"
 import GlobalStyle from './components/GlobalStyles'
 import ScrollTop from "./components/ScrollTop";
 // import pages
-import AboutUs from './pages/AboutUs'
+import AboutUs from './pages/About'
 import Nav from './components/Nav'
 import Projects from "./pages/OurWork"
-import ProjectDetail from './pages/MovieDetails'
-import Contact from "./pages/ContactUs"
+import ProjectDetail from './pages/ProjectDetail'
+import Contact from "./pages/Contact"
 //router
 import {Routes, Route, useLocation } from "react-router-dom"
 
