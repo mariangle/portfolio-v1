@@ -1,12 +1,22 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
-* {
+  :root {
+    --color-header: ${props => props.theme.headerColor};
+    --color-text: ${props => props.theme.textColor};
+    --color-main: ${props => props.theme.mainColor};
+    --color-bg: ${props => props.theme.backgroundColor};
+    --color-scroll-track: ${props => props.theme.scrollTrack};
+    --color-scroll-bar: ${props => props.theme.scrollBar};
+    --gradient: ${props => props.theme.gradientColor};
+  }
+
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   html {
     @media (max-width: 1700px) {
       font-size: 75%;
@@ -18,54 +28,62 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 1px;
     overflow-x: hidden;
     font-family: 'Poppins', sans-serif;
-    background-color: ${props => props.theme.backgroundColor};
-    color: ${props => props.theme.headerColor};
+    background-color: var(--color-bg);
+    color: var(--color-header);
   }
 
   button {
     letter-spacing: 1px;
-    color: ${props => props.theme.headerColor};
+    color: var(--color-header);
     font-size: 1.1rem;
     cursor: pointer;
     padding: 1rem 2rem;
-    border: 2px solid ${props => props.theme.mainColor};
+    border: 2px solid var(--color-main);
     background: transparent;
     transition: all 0.5s ease;
-    &:hover{
-        background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
     }
   }
-  a{
+
+  a {
     text-decoration: none;
-    color: ${props => props.theme.headerColor};
-    &:hover{
-      color: ${props => props.theme.mainColor};
+    color: var(--color-header);
+
+    &:hover {
+      color: var(--color-main);
     }
   }
+
   p {
-    color: ${props => props.theme.textColor};
-    padding: 2rem 0rem 3rem 0rem;
+    color: var(--color-text);
+    padding: 2rem 0 3rem;
     font-size: 1.4rem;
     line-height: 150%;
   }
-  h1{
+
+  h1 {
     font-size: 4rem;
   }
 
   h2 {
     font-weight: bolder;
     font-size: 3rem;
-    color: ${props => props.theme.headerColor};
-    span{
-      background-image:${props => props.theme.gradientColor};
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--color-header);
+
+    span {
+      background-image: var(--gradient);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
-  h3{
+
+  h3 {
     font-size: 2rem;
   }
+
   h4 {
     font-weight: bold;
     font-size: 2rem;
@@ -73,30 +91,22 @@ const GlobalStyle = createGlobalStyle`
 
   span {
     font-weight: bold;
-    color: ${props => props.theme.mainColor};
+    color: var(--color-main);
   }
 
-  a {
-    font-size: 1rem;
-    font-weight: bold;
-    letter-spacing: 0px;
-  }
-
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(155,155,155,0.5,) transparent;
-}
-*::-webkit-scrollbar{
+  *::-webkit-scrollbar {
     width: 8px;
-}
-*::-webkit-scrollbar-track{
-    background:  ${props => props.theme.scrollTrack};
-}
-*::-webkit-scrollbar-thumb{
-    background-color: ${props => props.theme.scrollBar};
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--color-scroll-track);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-scroll-bar);
     border: transparent;
     border-radius: 8px;
-}
-`
+  }
+`;
 
 export default GlobalStyle;

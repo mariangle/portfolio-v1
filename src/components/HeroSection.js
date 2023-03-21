@@ -1,15 +1,10 @@
-import React from "react"
-// about section components
-import {About, Description, Image, Hide} from "../styles"
-import Wave from "./Wave"
-// framer motion
-import {motion} from "framer-motion"
-import {titleAnim, fadeAnim} from "../animation"
-import { useScroll } from "./useScroll";
-
-
-import {Link} from "react-router-dom"
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { About, Description, Image, Hide } from "../styles";
+import { titleAnim, fadeAnim } from "../animation";
+import Wave from "./Wave";
 
 
 const AboutSection = () => {

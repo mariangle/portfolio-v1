@@ -1,4 +1,4 @@
-export const pageAnimation = {
+export const pageAnim = {
     hidden: {
         opacity: 0,
         y: 300
@@ -7,7 +7,7 @@ export const pageAnimation = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.5,
+            duration: 0.4,
             when: "beforeChildren",
             staggerChildren: 0.25
         }
@@ -19,8 +19,8 @@ export const pageAnimation = {
         }
     }
 }
-export const slideLeftVariants = {
-    slideLeft: {
+export const slideAnim = {
+    left: {
       hidden: { x: 200, opacity: 0 },
       show: {
         x: 0,
@@ -33,7 +33,22 @@ export const slideLeftVariants = {
         transition: { duration: 0.5 }
       }
     },
-    slideLeftWithDelay: {
+    right: {
+        hidden: {x: -200, opacity: 0},
+        show: {
+            x: 0,
+            opacity: 1,
+            transition: { duration: 0.75, ease: "easeOut" }
+        },
+        exit: {
+            x: -200,
+            opacity: 0,
+            transition: {
+                duration: 0.5
+            }
+        }
+      },
+    leftWithDelay: {
       hidden: { x: 200, opacity: 0 },
       show: {
         delay: 3,
@@ -46,23 +61,28 @@ export const slideLeftVariants = {
         opacity: 0,
         transition: { duration: 0.5 }
       }
-    }
-  };
-export const slideRight = {
-    hidden: {x: -200, opacity: 0},
-    show: {
-        x: 0,
-        opacity: 1,
-        transition: { duration: 0.75, ease: "easeOut" }
     },
-    exit: {
-        x: -200,
-        opacity: 0,
-        transition: {
-            duration: 0.5
+    up: {
+        hidden: {opacity: 1, y: 200},
+        show: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            transition:
+            {
+                duration: 1
+            }
+        },
+        exit: {
+            opacity: 0,
+            y: 200,
+            transition:
+            {
+                duration: 0.5
+            }
         }
     }
-}
+  }
 export const titleAnim = {
     hidden: {y: 200},
     show: {
@@ -106,7 +126,7 @@ export const lineAnim = {
         transition: {duration: 1}
     }
 }
-export const slider = {
+export const sliderAnim = {
     hidden: {x: "-130%", skew: "45deg"},
     show: {
         x: "100%",
@@ -121,27 +141,7 @@ export const sliderContainer  = {
         transition: {ease: "easeOut", staggerChildren: 0.15}
     }
 }
-export const slideUp = { 
-    hidden: {opacity: 1, y: 200},
-    show: {
-        opacity: 1,
-        scale: 1,
-        y: 0,
-        transition:
-        {
-            duration: 1
-        }
-    },
-    exit: {
-        opacity: 0,
-        y: 200,
-        transition:
-        {
-            duration: 0.5
-        }
-    }
-}
-export const swoop = {
+export const swoopAnim = {
     hidden: {width: "50%"},
     show: {
         width: "100%",

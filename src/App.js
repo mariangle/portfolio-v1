@@ -1,35 +1,42 @@
-import React, {useState} from 'react';
-// import components
-import Theme from './components/Theme'
-import Cursor from "./Cursor"
-import GlobalStyle from './components/GlobalStyles'
-import ScrollTop from "./components/ScrollTop";
-// import pages
-import AboutUs from './pages/About'
-import Nav from './components/Nav'
-import Projects from "./pages/OurWork"
-import ProjectDetail from './pages/ProjectDetail'
-import Contact from "./pages/Contact"
-//router
-import {Routes, Route, useLocation } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Theme from './components/Theme';
+import Cursor from './Cursor';
+import GlobalStyle from './components/GlobalStyles';
+import ScrollTop from './components/ScrollTop';
+import AboutUs from './pages/Home';
+import Projects from './pages/Projects';
+import ProjectDetail from './pages/ProjectDetail';
+import Contact from './pages/Contact';
+import Nav from './components/Nav';
 
 function App() {
   const [theme, setTheme] = useState('light');
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   function toggleTheme() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   }
 
+  function getTitle() {
+    const path = pathname;
+    const title = path.split('/').filter((str) => str !== '').map((str) => str.charAt(0).toUpperCase() + str.slice(1)).join('');
+    return `${title}`;
+  }
+
+  useEffect(() => {
+    document.title = `Maria - ${getTitle()}`;
+  }, [pathname]);
+
   return (
     <div className="App">
       <Theme theme={theme}>
-        <Cursor/>
+        <Cursor />
         <GlobalStyle />
         <Nav toggleTheme={toggleTheme} />
         <ScrollTop />
-        <Routes location={location}>
-          <Route path="/" element={<AboutUs />} />
+        <Routes>
+          <Route path="/home" element={<AboutUs />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />

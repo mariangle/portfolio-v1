@@ -6,12 +6,12 @@ import Toggle from "./Toggle"
 import { useScroll } from "./useScroll"
 // animations
 import { LayoutGroup } from "framer-motion"
-import {titleAnim} from "../animation"
+import {slideAnim} from "../animation"
 
 const FaqSection = () => {
     const [ref, controls] = useScroll();
     return(
-        <Faq variants={titleAnim} ref={ref} animate={controls} initial="hidden">
+        <Faq variants={slideAnim.up} ref={ref} animate={controls} initial="hidden">
             <LayoutGroup>
                 <h2>Questions <span>FAQ</span></h2>
                 <Toggle className="question" title="Question">

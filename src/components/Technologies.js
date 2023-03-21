@@ -14,7 +14,7 @@ import gsap from "../icons/gsap.png"
 import {About, Description} from "../styles";
 import styled from "styled-components";
 // import animations
-import { slideLeftVariants, slideRight} from "../animation";
+import { slideAnim } from "../animation";
 import { useScroll } from "./useScroll";
 import {motion} from "framer-motion";
 
@@ -24,7 +24,7 @@ const ServicesSection = () => {
     return( 
             <div>
                 <Services>
-                    <Description variants={slideRight} animate={controls} initial="hidden" ref={ref}>
+                    <Description variants={slideAnim.right} animate={controls} initial="hidden" ref={ref}>
                         <h2>Recent <span>technologies</span> I've used</h2>
                         <Cards>
                             <Card>
@@ -53,7 +53,7 @@ const ServicesSection = () => {
                             </Card>
                         </Cards>
                     </Description>
-                    <Techstack variants={slideLeftVariants.slideLeftWithDelay} animate={controls} initial="hidden" ref={ref} >
+                    <Techstack variants={slideAnim.leftWithDelay} animate={controls} initial="hidden" ref={ref} >
                             <h3>Techstack</h3>
                             <img src={html} alt="" />
                             <img src={css} alt="" />

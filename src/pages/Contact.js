@@ -1,13 +1,13 @@
 import React from 'react'
 // animations
 import {motion} from "framer-motion"
-import { pageAnimation, titleAnim } from "../animation"
+import { pageAnim, titleAnim } from "../animation"
 // styles
 import styled from 'styled-components'
 
 const ContactUs = () => {
   return (
-    <ContactStyle exit="exit" variants={pageAnimation} initial="hidden" animate="show">
+    <ContactStyle exit="exit" variants={pageAnim} initial="hidden" animate="show">
       <Title>
         <Hide>
           <motion.h2 variants={titleAnim}>Get in <span>touch.</span></motion.h2>

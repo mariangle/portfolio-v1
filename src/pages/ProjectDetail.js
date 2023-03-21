@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { useLocation } from 'react-router-dom';
 // import anim
 import {motion} from "framer-motion";
-import { pageAnimation } from "../animation";
+import { pageAnim } from "../animation";
 
 function MovieDetails() {
   const url = useLocation();
@@ -21,7 +21,7 @@ function MovieDetails() {
   return (
     <>
     {movie && (
-      <Details exit="exit" variants={pageAnimation} initial="hidden" animate="show">
+      <Details exit="exit" variants={pageAnim} initial="hidden" animate="show">
         <HeadLine>
           <h2>{movie.title}</h2>
           <img src={movie.mainImg} alt="" />
