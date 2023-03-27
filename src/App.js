@@ -4,7 +4,7 @@ import Theme from './components/Theme';
 import Cursor from './Cursor';
 import GlobalStyle from './components/GlobalStyles';
 import ScrollTop from './components/ScrollTop';
-import AboutUs from './pages/Home';
+import Home from './pages/Home';
 import Projects from './pages/Projects';
 import ProjectDetail from './pages/ProjectDetail';
 import Contact from './pages/Contact';
@@ -20,8 +20,12 @@ function App() {
 
   function getTitle() {
     const path = pathname;
-    const title = path.split('/').filter((str) => str !== '').map((str) => str.charAt(0).toUpperCase() + str.slice(1)).join('/');
-    return `${title}`;
+    if (pathname === "/"){
+      return `Home`;
+    } else{
+      const title = path.split('/').filter((str) => str !== '').map((str) => str.charAt(0).toUpperCase() + str.slice(1)).join('/');
+      return `${title}`;
+    }
   }
 
   useEffect(() => {
@@ -36,8 +40,8 @@ function App() {
         <Nav toggleTheme={toggleTheme} />
         <ScrollTop />
         <Routes>
-          <Route path="/home" element={<AboutUs />} />
-          <Route path="/about" element={<AboutUs />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />

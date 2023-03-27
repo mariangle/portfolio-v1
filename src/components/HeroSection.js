@@ -41,9 +41,9 @@ const HeroSection = () => {
                         <span>public class</span> Maria : Person<br />
                         <div className="properties">
                             &#123;<br />
-                            <span>public int</span>  Age &#123; get; &#125; = 21;<br />
-                            <span>public string</span> Location &#123; get; &#125; = "Odense C, Denmark";<br />
-                            <span>public string</span>  Studying &#123; get; &#125; = "UCL";<br />
+                            <span>public int</span>  Age &#123; get; &#125; = saddsa;<br />
+                            <span>public string</span> Location &#123; get; &#125; = "dsadasdsa Casddas sadsaddsa";<br />
+                            <span>public string</span>  Studying &#123; get; &#125; = "sdadsadas";<br />
                         </div>
                         &#125;
                     </Class>

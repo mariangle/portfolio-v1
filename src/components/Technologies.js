@@ -2,13 +2,7 @@ import React from "react";
 // import icons
 import framerMotion from "../icons/motion.png"
 import sass from "../icons/sass.svg"
-import js from "../icons/javascript.svg"
 import react from "../icons/react.svg"
-import html from "../icons/html.png"
-import css from "../icons/css.png"
-import csharp from "../icons/csharp.png"
-import sql from "../icons/sql.png"
-import sc from "../icons/sc.png"
 import gsap from "../icons/gsap.png"
 // styles
 import {About, Description} from "../styles";
@@ -55,13 +49,13 @@ const ServicesSection = () => {
                     </Description>
                     <Techstack variants={slideAnim.leftWithDelay} animate={controls} initial="hidden" ref={ref} >
                             <h3>Techstack</h3>
-                            <img src={html} alt="" />
-                            <img src={css} alt="" />
-                            <img src={js} alt="" />
-                            <img src={gsap} alt="" />   
-                            <img src={csharp} alt="" />
-                            <img src={sql} alt="" />
-                            <img src={sc} alt="" />
+                            <img src="" alt="" />
+                            <img src="" alt="" />
+                            <img src="" alt="" />
+                            <img src="" alt="" />
+                            <img src="" alt="" />
+                            <img src="" alt="" />
+                            <img src="" alt="" />
                     </Techstack>
                 </Services>
             </div>

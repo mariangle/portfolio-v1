@@ -13,15 +13,16 @@ const Nav = ({toggleTheme}) => {
         <ul>
             <li>
                <Link className="link" to="/home">HOME</Link>
-               <Line transition={{duration: 0.5}} initial={{width: "0%"}} animate={{width: pathname === "/" ? "100%" : "0%" }} /> 
+               <Line transition={{duration: 0.5}} initial={{width: "0%"}} animate={{width: pathname === "/home"  ? "100%" : "0%" }} /> 
+               <Line transition={{duration: 0.5}} initial={{width: "0%"}} animate={{width: pathname === "/"  ? "100%" : "0%" }} /> 
             </li>
             <li>
                 <Link className="link" to="/projects">PROJECTS</Link>
-                <Line transition={{duration: 0.3}} initial={{width: "0%"}} animate={{width: pathname === "/projects" ? "100%" : "0%" }} /> 
+                <Line transition={{duration: 0.5}} initial={{width: "0%"}} animate={{width: pathname === "/projects" ? "100%" : "0%" }} /> 
             </li>
             <li>
                 <Link className="link" to="/contact">CONTACT</Link>
-                <Line transition={{duration: 0.3}} initial={{width: "0%"}} animate={{width: pathname === "/contact" ? "100%" : "0%" }} />  
+                <Line transition={{duration: 0.5}} initial={{width: "0%"}} animate={{width: pathname === "/contact" ? "100%" : "0%" }} />  
             </li>
             <li>
                 <Label className="label">
@@ -111,9 +112,9 @@ ul{
     align-items: center;
     list-style: none;
     gap: 5vw;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(5px);
     background-color: ${props => props.theme.navBackground};
-    box-shadow: ${props => props.theme.navShadow};
+    border: 2px solid ${(props) => props.theme.secondBackground};
 }
 li{
     bottom: 0;
