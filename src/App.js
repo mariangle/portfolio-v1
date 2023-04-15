@@ -6,7 +6,6 @@ import GlobalStyle from './components/GlobalStyles';
 import ScrollTop from './components/ScrollTop';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
-import ProjectDetail from './pages/ProjectDetail';
 import Contact from './pages/Contact';
 import Nav from './components/Nav';
 
@@ -43,7 +42,6 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </Theme>

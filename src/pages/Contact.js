@@ -2,6 +2,7 @@ import React from 'react'
 // animations
 import {motion} from "framer-motion"
 import { pageAnim, titleAnim } from "../animation"
+
 // styles
 import styled from 'styled-components'
 

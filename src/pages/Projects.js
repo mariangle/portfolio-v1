@@ -4,14 +4,11 @@ import styled from 'styled-components';
 import {useScroll} from "../components/useScroll";
 import ScrollTop from '../components/ScrollTop';
 // router
-import { Link } from 'react-router-dom';
 // images
 import athlete from "../img/project1.png"
-import theracer from "../img/theracer-small.png"
-import goodtimes from "../img/goodtimes-small.png"
 // animations
 import {motion} from "framer-motion";
-import {swoop, sliderContainer, sliderAnim, pageAnim, fadeAnim, photoAnim, slideAnim} from "../animation";
+import {sliderContainer, sliderAnim, pageAnim, fadeAnim, photoAnim, slideAnim} from "../animation";
 
 function Projects() {
   const [element, controls] = useScroll();
@@ -26,28 +23,28 @@ function Projects() {
         <Frame4 variants={sliderAnim}></Frame4>
       </motion.div>
       <Movie>
-        <motion.h2 variants={fadeAnim}>Projekt</motion.h2>
-        <motion.p variants={slideAnim.leftWithDelay}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas vitae temporibus fugiat delectus sapiente vel laudantium suscipit ipsum debitis. Doloremque.</motion.p>
-        <Link to="/projects/the-athlete">
+        <motion.h2 variants={fadeAnim}>Ecommerce</motion.h2>
+        <motion.p variants={slideAnim.leftWithDelay}>Full-stack e-commerce app for purchasing sneakers, built for learning with front-end and back-end techniques.</motion.p>
+        <div>
           <Hide>
             <motion.img variants={photoAnim} src={athlete} alt="" />
           </Hide>
-        </Link>
+        </div>
       </Movie>
-      <Movie>
-        <motion.h2 variants={slideAnim.right} animate={controls} initial="hidden">Projekt</motion.h2>
+      {/*<Movie>
+        <motion.h2 variants={slideAnim.right} animate={controls} initial="hidden">Møbel Huset</motion.h2>
         <motion.p variants={slideAnim.right} animate={controls} initial="hidden"> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas vitae temporibus fugiat delectus sapiente vel laudantium suscipit ipsum debitis. Doloremque.</motion.p>
         <Link to="/projects/the-racer">
           <motion.img ref={element} variants={slideAnim.leftWithDelay} animate={controls} initial="hidden" src={theracer} alt="" />
         </Link>
-      </Movie>
-      <Movie ref={element2} variants={fadeAnim} animate={controls2} initial="hidden">
+      </Movie> */}
+      { /*<Movie ref={element2} variants={fadeAnim} animate={controls2} initial="hidden">
         <h2>Projekt</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas vitae temporibus fugiat delectus sapiente vel laudantium suscipit ipsum debitis. Doloremque.</p>
         <Link to="/projects/good-times">
           <img src={goodtimes} alt="" />
         </Link>
-      </Movie>
+      </Movie>*/}
       <ScrollTop></ScrollTop>
     </Work>
   )

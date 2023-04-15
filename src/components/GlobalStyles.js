@@ -7,7 +7,7 @@ const GlobalStyle = createGlobalStyle`
     --color-main: ${props => props.theme.mainColor};
     --color-bg: ${props => props.theme.backgroundColor};
     --color-scroll-track: ${props => props.theme.scrollTrack};
-    --color-scroll-bar: ${props => props.theme.scrollBar};
+    --color-scroll-bar: ${props => props.theme.mainColor};
     --gradient: ${props => props.theme.gradientColor};
   }
 

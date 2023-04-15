@@ -13,20 +13,14 @@ const FaqSection = () => {
     return(
         <Faq variants={slideAnim.up} ref={ref} animate={controls} initial="hidden">
             <LayoutGroup>
-                <h2>Questions <span>FAQ</span></h2>
-                <Toggle className="question" title="Question">
+                <h2>Featured <span>Projects</span></h2>
+                <Toggle className="question" title="Ecommerce">
                         <div className="answer">
                             <p>Lorem ipsum dolor sit amet.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi!</p>
                     </div>
                 </Toggle>
-                <Toggle className="question" title="Question">
-                        <div className="answer">
-                            <p>Lorem ipsum dolor sit amet.</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi!</p>
-                        </div>
-                </Toggle>
-                <Toggle className="question" title="question">
+                <Toggle className="question" title="Møbelhuset">
                         <div className="answer">
                             <p>Lorem ipsum dolor sit amet.</p>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi!</p>
