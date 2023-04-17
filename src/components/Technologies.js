@@ -5,85 +5,50 @@ import sass from "../icons/sass.svg"
 import react from "../icons/react.svg"
 import gsap from "../icons/gsap.png"
 // styles
-import {About, Description} from "../styles";
+import {About, Description, Image} from "../styles/styles";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 // import animations
 import { slideAnim } from "../animation";
 import { useScroll } from "./useScroll";
-import {motion} from "framer-motion";
 
 
-const ServicesSection = () => {
+const AboutMe = () => {
     const [ref, controls] = useScroll();
-    return( 
-            <div>
-                <Services>
+    const [ref2, controls2] = useScroll();
+    return(
+            <>
+                <Services id="about">
                     <Description variants={slideAnim.right} animate={controls} initial="hidden" ref={ref}>
                         <h2>Recent <span>technologies</span> I've used</h2>
-                        <Cards>
-                            <Card>
-                                <div className="icon">
-                                    <img src={react} alt="" />
-                                    <h3>React</h3>
-                                </div>
-                            </Card>
-                            <Card>
-                                <div className="icon">
-                                    <img src={sass} alt="" />
-                                    <h3>Sass</h3>
-                                </div>
-                            </Card>
-                            <Card>
-                                <div className="icon">
-                                    <img src={gsap} alt="" />
-                                    <h3>GSAP</h3>
-                                </div>
-                            </Card>
-                            <Card>
-                                <div className="icon">
-                                    <img src={framerMotion} alt="" />
-                                    <h3>Framer Motion</h3>
-                                </div>
-                            </Card>
-                        </Cards>
                     </Description>
-                    <Techstack variants={slideAnim.leftWithDelay} animate={controls} initial="hidden" ref={ref} >
-                            <h3>Techstack</h3>
-                            <img src="" alt="" />
-                            <img src="" alt="" />
-                            <img src="" alt="" />
-                            <img src="" alt="" />
-                            <img src="" alt="" />
-                            <img src="" alt="" />
-                            <img src="" alt="" />
-                    </Techstack>
+                    <Namespace variants={slideAnim.leftWithDelay} animate={controls2} initial="hidden" ref={ref2} >
+                                    <Window>
+                                        <div className="circle"></div>
+                                        <div className="circle2 circle"></div>
+                                        <div className="circle3 circle"></div>
+                                    </Window>
+                                    <p>
+                                        <span>namespace</span> Github<br/>&#123;
+                                    </p>
+                                        <Class>
+                                            <span>public class</span> Maria : Person<br />
+                                            <div className="properties">
+                                                &#123;<br />
+                                                <span>public int</span>  Age &#123; get; &#125; = saddsa;<br />
+                                                <span>public string</span> Location &#123; get; &#125; = "dsadasdsa Casddas sadsaddsa";<br />
+                                                <span>public string</span>  Studying &#123; get; &#125; = "sdadsadas";<br />
+                                            </div>
+                                            &#125;
+                                        </Class>
+                                    &#125;
+                                </Namespace>
                 </Services>
-            </div>
+            </>
     )
 }
-const Techstack = styled(motion.div)`
-flex: 1;
-margin-top: 5rem;
-align-items: center;
-justify-content: center;
-display: flex;
-border-radius: 20px;
-background: ${props => props.theme.secondBackground};
-padding: 2rem;
-display: block;
 
-h3{
-    margin: 2rem 0rem;
-    font-size: 1.6rem;
-}
-img{
-    height: 35px;
-    margin-right: 1rem;
-}
-`
 const Services = styled(About)`
-min-height: 0vh;
-padding: 0rem 10rem 5rem 10rem;
 h2{
     padding-bottom: 5rem;
     @media (max-width: 550px){
@@ -98,28 +63,91 @@ p{
     padding: 2rem 2rem;
 }
 `
-const Cards = styled.div`
-display: flex;
-flex-wrap: wrap;
+
+
+const Class = styled.div`
+ margin-left: 1rem;
+    p span, p{
+        font-size: 1rem;
+    }
+    span{
+        color: ${props => props.theme.keyword};
+    }
+`
+
+const Namespace = styled(motion.Image)`
+border-radius: 20px;
+border: 5px solid ${props => props.theme.secondBackground};;
+background: ${props => props.theme.navBackground};
+padding: 1rem;
+transition: 0.1s ease-in-out;
+animation: float 3s infinite alternate;
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+h4{
+    color: ${props => props.theme.className};
+    display: inline-block;
+}
+p{
+    color: ${props => props.theme.headerColor};
+    padding: 1rem 0 0 0;
+}
+p{
+    text-align: left;
+
+}
+p span, p, h4{
+    font-family: sans-serif;
+    font-size: 1rem;
+}
+span{
+    color: ${props => props.theme.keyword};
+}
+.properties{
+    margin-left: 1rem;
+    p span, p{
+        font-size: 1rem;
+    }
+    span{
+        color: ${props => props.theme.keyword};
+    }
+}
 @media (max-width: 1300px){
-    justify-content: center;
 }
-`
-const Card = styled.div`
-flex-basis: 20rem;
-img{
-        height: 100%;
-        width: 50px;
-    }
-.icon{
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    h3{
-        font-size: 1.6rem;
-        margin-left: 1rem;
-        padding: 1rem;
+@media (max-width: 500px){
+    p, h4, p span{
+        font-size: 80%;
     }
 }
 `
-export default ServicesSection;
+const Window = styled.div`
+display: flex;
+width: 100%;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+.circle{
+    height: 10px;
+    width: 10px;
+    margin-right: 0.5rem;
+    border-radius: 50%;
+    background: #ff5e59;
+    &:nth-child(2){
+        background: #ffbb2e
+    }
+    &:nth-child(3){
+    background: #22ce32;
+    }
+}
+`
+export default AboutMe;

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Theme from './components/Theme';
-import Cursor from './Cursor';
-import GlobalStyle from './components/GlobalStyles';
+import Theme from './styles/Theme';
+import GlobalStyle from './styles/GlobalStyles';
 import ScrollTop from './components/ScrollTop';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
@@ -17,24 +16,13 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   }
 
-  function getTitle() {
-    const path = pathname;
-    if (pathname === "/"){
-      return `Home`;
-    } else{
-      const title = path.split('/').filter((str) => str !== '').map((str) => str.charAt(0).toUpperCase() + str.slice(1)).join('/');
-      return `${title}`;
-    }
-  }
-
   useEffect(() => {
-    document.title = `Maria - ${getTitle()}`;
+    document.title = "Maria Le";
   }, [pathname]);
 
   return (
     <div className="App">
       <Theme theme={theme}>
-        <Cursor />
         <GlobalStyle />
         <Nav toggleTheme={toggleTheme} />
         <ScrollTop />

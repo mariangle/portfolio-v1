@@ -4,6 +4,7 @@ import {ThemeProvider } from 'styled-components';
 const lightTheme = {
   backgroundColor: "#f9f9f9",
   secondBackground: "#f3f3f3",
+  thirdBackground: "#e9e9e9",
   navBackground: "	rgba(249,249,249,0.3)",
   navShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
   headerColor: "#2d2e32",
@@ -18,7 +19,8 @@ const lightTheme = {
 
 const darkTheme = {
   backgroundColor: "#0d1117",
-  secondBackground: "#161b22",
+  secondBackground: "#292d33",
+  thirdBackground: "#1d2024",
   navBackground: "rgba(13,17,23,0.3);",
   navShadow: "0 0 10px rgba(0, 0, 0, 0.2)",
   headerColor: '#ffffff',

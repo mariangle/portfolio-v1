@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { About, Description, Image, Hide } from "../styles";
+import { About, Description, Image, Hide } from "../styles/styles";
 import { titleAnim, fadeAnim } from "../animation";
 import Wave from "./Wave";
 

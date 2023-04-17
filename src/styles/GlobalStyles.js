@@ -50,7 +50,6 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: var(--color-header);
-
     &:hover {
       color: var(--color-main);
     }
@@ -58,9 +57,7 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     color: var(--color-text);
-    padding: 2rem 0 3rem;
-    font-size: 1.4rem;
-    line-height: 150%;
+    font-size: 1rem;
   }
 
   h1 {
@@ -81,16 +78,18 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h3 {
-    font-size: 2rem;
+    font-size: 1.2rem;
   }
 
   h4 {
     font-weight: bold;
     font-size: 2rem;
   }
+  li{
+    list-style: none;
+  }
 
   span {
-    font-weight: bold;
     color: var(--color-main);
   }
 

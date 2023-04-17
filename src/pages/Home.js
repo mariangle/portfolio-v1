@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import HeroSection from "../components/HeroSection";
 import Technologies from "../components/Technologies";
-import FaqSection from "../components/FaqSection";
+import Projects from "./Projects";
+import Contact from "./Contact";
 import { pageAnim } from "../animation";
 
 const Home = () => {
@@ -14,7 +15,8 @@ const Home = () => {
     >
       <HeroSection />    
       <Technologies />
-      <FaqSection />
+      <Projects />
+      <Contact />
     </motion.div>
   );
 };

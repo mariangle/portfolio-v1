@@ -2,13 +2,11 @@ import React from 'react'
 // animations
 import {motion} from "framer-motion"
 import { pageAnim, titleAnim } from "../animation"
-
-// styles
 import styled from 'styled-components'
 
-const ContactUs = () => {
+const Contact = () => {
   return (
-    <ContactStyle exit="exit" variants={pageAnim} initial="hidden" animate="show">
+    <ContactStyle exit="exit" variants={pageAnim} initial="hidden" animate="show" id="contact">
       <Title>
         <Hide>
           <motion.h2 variants={titleAnim}>Get in <span>touch.</span></motion.h2>
@@ -37,8 +35,11 @@ h3{
   font-weight: lighter;
   margin: 2rem;
 }
-padding: 5rem 10rem;
+padding: 5rem 1rem;
 min-height: 90vh;
+width: 100%;
+max-width: 1440px;
+margin: auto;
 @media (max-width: 650px){
   padding: 2rem;
   h3{
@@ -71,4 +72,4 @@ h2{
   margin: 2rem;
 }`
 
-export default ContactUs;
+export default Contact;

@@ -48,20 +48,20 @@ export const slideAnim = {
             }
         }
       },
-    leftWithDelay: {
-      hidden: { x: 200, opacity: 0 },
-      show: {
-        delay: 3,
-        x: 0,
-        opacity: 1,
-        transition: { duration: 0.75, ease: "easeOut", delay: 0.5 }
+      leftWithDelay: {
+        hidden: { x: "-100%", opacity: 0 },
+        show: {
+          delay: 3,
+          x: 0,
+          opacity: 1,
+          transition: { duration: 0.75, ease: "easeOut", delay: 1 }
+        },
+        exit: {
+          x: "-100%",
+          opacity: 0,
+          transition: { duration: 0.5 }
+        }
       },
-      exit: {
-        x: 200,
-        opacity: 0,
-        transition: { duration: 0.5 }
-      }
-    },
     up: {
         hidden: {opacity: 1, y: 200},
         show: {

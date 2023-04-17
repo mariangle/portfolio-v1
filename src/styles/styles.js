@@ -10,8 +10,9 @@ export const About = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 5rem 10rem;
-
+  max-width: 1080px;
+  margin: auto;
+  padding: 5rem 1rem;
   @media (max-width: 1200px) {
     display: block;
     padding: 2rem;
@@ -43,3 +44,13 @@ export const Image = styled(Container)`
 export const Hide = styled.div`
   overflow: hidden;
 `;
+
+export const StyledButton = styled(motion.button)`
+background: ${props => props.theme.mainColor};
+color: white;
+border: 2px solid ${props => props.theme.mainColor};
+margin-right: 1rem;
+@media (max-width: 1300px){
+    margin-bottom: 2rem;
+}
+`

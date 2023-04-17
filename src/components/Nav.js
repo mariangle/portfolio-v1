@@ -1,28 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { useLocation, Link } from 'react-router-dom';
 
 const Nav = ({toggleTheme}) => {
-    const {pathname} = useLocation();
   return (
     <StyledNav>
-        <h1><Link to="/" id="logo"> &lt;<span>Maria</span> /&gt;</Link></h1>
+        <h1><Link to="/" id="logo"> &lt;<span>Maria</span>/&gt;</Link></h1>
         <ul>
             <li>
-               <Link className="link" to="/home">HOME</Link>
-               <Line transition={{duration: 0.5}} initial={{width: "0%"}} animate={{width: pathname === "/home"  ? "100%" : "0%" }} /> 
-               <Line transition={{duration: 0.5}} initial={{width: "0%"}} animate={{width: pathname === "/"  ? "100%" : "0%" }} /> 
+               <a className="link" href="#about"><span>01.</span> ABOUT</a>
             </li>
             <li>
-                <Link className="link" to="/projects">PROJECTS</Link>
-                <Line transition={{duration: 0.5}} initial={{width: "0%"}} animate={{width: pathname === "/projects" ? "100%" : "0%" }} /> 
+                <a className="link" href="#projects"><span>02.</span> PROJECTS</a>
             </li>
             <li>
-                <Link className="link" to="/contact">CONTACT</Link>
-                <Line transition={{duration: 0.5}} initial={{width: "0%"}} animate={{width: pathname === "/contact" ? "100%" : "0%" }} />  
+                <a className="link" href="#contact"><span>03.</span> CONTACT</a>
             </li>
             <li>
                 <Label className="label">
@@ -89,15 +83,19 @@ const Label = styled.label`
 
 
 const StyledNav = styled.nav`
-padding: 1rem 0rem;  
+  padding: 1rem 0rem;  
   display: flex;
-  justify-content: center;
-  margin: 0 0 0 10%;
   justify-content: space-between;
   align-items: center;
-  position: sticky;
+  position: fixed;
   z-index: 9999;
+  width: 100%;
+  margin: auto;
+  padding-left: 1rem;
   top: 0;
+  left: 50%;
+transform: translateX(-50%);
+
   h1 {
     display: flex;
     align-items: center;
@@ -148,18 +146,6 @@ li{
         display: inline-block;
         margin: 2rem;
     }
-}
-`
-
-const Line = styled(motion.div)`
-height: 0.2rem;
-background: ${props => props.theme.mainColor};
-width: 0%;
-position: absolute;
-bottom: -50%;
-left: 0%;
-@media (max-width: 1300px){
-    left: 0%;
 }
 `
 
