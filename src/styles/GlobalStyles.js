@@ -58,6 +58,7 @@ const GlobalStyle = createGlobalStyle`
   p {
     color: var(--color-text);
     font-size: 1rem;
+    line-height: 150%;
   }
 
   h1 {

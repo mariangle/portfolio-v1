@@ -9,7 +9,7 @@ import Contact from './pages/Contact';
 import Nav from './components/Nav';
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
   const { pathname } = useLocation();
 
   function toggleTheme() {

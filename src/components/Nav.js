@@ -21,8 +21,8 @@ const Nav = ({toggleTheme}) => {
             <li>
                 <Label className="label">
                     <div className="icons">
-                        <FontAwesomeIcon className="icon" icon={faSun} />
                         <FontAwesomeIcon className="icon" icon={faMoon} />
+                        <FontAwesomeIcon className="icon" icon={faSun} />
                     </div>
                     <input type="checkbox" onClick={toggleTheme}/>
                     <span className="ball"></span>
@@ -58,13 +58,10 @@ const Label = styled.label`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #2d2e32;
+    color: gold;
     .icon {
       width: 10px;
       height: 10px;
-      &:nth-child(2) {
-        color: gold;
-      }
     }
   }
   .ball {

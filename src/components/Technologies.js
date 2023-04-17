@@ -1,11 +1,7 @@
 import React from "react";
 // import icons
-import framerMotion from "../icons/motion.png"
-import sass from "../icons/sass.svg"
-import react from "../icons/react.svg"
-import gsap from "../icons/gsap.png"
 // styles
-import {About, Description, Image} from "../styles/styles";
+import {About, Description} from "../styles/styles";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 // import animations
@@ -75,7 +71,7 @@ const Class = styled.div`
     }
 `
 
-const Namespace = styled(motion.Image)`
+const Namespace = styled(motion.div)`
 border-radius: 20px;
 border: 5px solid ${props => props.theme.secondBackground};;
 background: ${props => props.theme.navBackground};

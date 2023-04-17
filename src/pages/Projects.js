@@ -12,7 +12,7 @@ const projects = projectState();
 
   return (
     <StyledProjects id="projects">
-      <h2>Featured Projects</h2>
+      <h2>Projects</h2>
       <ProjectGrid>
         {projects.map((project, index) => (
           <Project project={project} key={index}/> 
@@ -24,14 +24,22 @@ const projects = projectState();
 }
 
 const StyledProjects = styled(motion.div)`
-    max-width: 1440px;
+    max-width: 1080px;
+    padding: 1rem;
     margin: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    h2{
+      margin-bottom: 2rem;
+    }
 `
 
 const ProjectGrid = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 1rem;
+
 `
 
 
