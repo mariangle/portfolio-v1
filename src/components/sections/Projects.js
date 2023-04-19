@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 // components
-import ScrollTop from '../components/ScrollTop';
+import ScrollTop from '../util/ScrollTop';
 // animations
 import {motion} from "framer-motion";
-import { projectState } from '../projectState';
-import Project from '../components/Project';
+import { projectState } from '../../projectState';
+import Project from '../Project';
+import Featured from '../Featured';
 
 function Projects() {
 const projects = projectState();
 
   return (
     <StyledProjects id="projects">
-      <h2>Projects</h2>
+      <h2><span>02.</span> Projects</h2>
+      <Featured/>
+      <h2>Other Projects</h2>
       <ProjectGrid>
         {projects.map((project, index) => (
           <Project project={project} key={index}/> 
@@ -30,9 +33,6 @@ const StyledProjects = styled(motion.div)`
     display: flex;
     align-items: center;
     flex-direction: column;
-    h2{
-      margin-bottom: 2rem;
-    }
 `
 
 const ProjectGrid = styled.div`

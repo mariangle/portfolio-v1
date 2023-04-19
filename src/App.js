@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import Theme from './styles/Theme';
 import GlobalStyle from './styles/GlobalStyles';
-import ScrollTop from './components/ScrollTop';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import Contact from './pages/Contact';
-import Nav from './components/Nav';
+import ScrollTop from './components/util/ScrollTop';
+import Header from './components/Header';
+
+import Home from './Home';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -24,14 +23,9 @@ function App() {
     <div className="App">
       <Theme theme={theme}>
         <GlobalStyle />
-        <Nav toggleTheme={toggleTheme} />
+        <Header toggleTheme={toggleTheme} />
         <ScrollTop />
-        <Routes>
-          <Route path="/home" element={<Home />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <Home />
       </Theme>
     </div>
   );

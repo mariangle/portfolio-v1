@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
     --color-scroll-track: ${props => props.theme.scrollTrack};
     --color-scroll-bar: ${props => props.theme.mainColor};
     --gradient: ${props => props.theme.gradientColor};
+    --font-mono: "Roboto Mono", sans-serif;
+    --font-sans: "Poppins", sans-serif;
   }
 
   * {
@@ -18,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    @media (max-width: 1700px) {
+    @media (max-width: 800px) {
       font-size: 75%;
     }
   }
@@ -27,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
     transition: all 0.2s ease;
     letter-spacing: 1px;
     overflow-x: hidden;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-sans);
     background-color: var(--color-bg);
     color: var(--color-header);
   }
@@ -65,18 +67,16 @@ const GlobalStyle = createGlobalStyle`
     font-size: 4rem;
   }
 
-  h2 {
+  h2{
     font-weight: bolder;
-    font-size: 3rem;
-    color: var(--color-header);
-
-    span {
-      background-image: var(--gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+    color: var(--color-header);    
+    margin-bottom: 2rem;
+    span{
+        font-family: var(--font-mono);
+        font-size: 1.2rem;
     }
-  }
+  } 
 
   h3 {
     font-size: 1.2rem;
@@ -106,6 +106,18 @@ const GlobalStyle = createGlobalStyle`
     background-color: var(--color-scroll-bar);
     border: transparent;
     border-radius: 8px;
+  }
+
+  textarea, input{
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    color: var(--color-header);
+    width: 100%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 2px solid var(--color-header);
+    background: none;
   }
 `;
 

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { useLocation, Link } from 'react-router-dom';
 
-const Nav = ({toggleTheme}) => {
+const Header = ({toggleTheme}) => {
   return (
     <StyledNav>
         <h1><Link to="/" id="logo"> &lt;<span>Maria</span>/&gt;</Link></h1>
@@ -116,6 +116,13 @@ li{
     position: relative;
     a{
         left: 0%;
+        span{
+      font-family:  var(--font-mono);
+      font-size: 0.8rem;
+      @media (max-width: 700px){
+        display: none;
+      }
+    }
     }
 }
 #logo{
@@ -146,4 +153,4 @@ li{
 }
 `
 
-export default Nav;
+export default Header;

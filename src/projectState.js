@@ -26,7 +26,7 @@ export const projectState = () => {
         },
         {
             title: 'MoebelHuset',
-            description: "Furniture website using HTML, Sass, and JavaScript, based on a Figma design. The project achieved a personal touch, but could be improved for better responsiveness and reduced code.",
+            description: "Furniture website using HTML, Sass, and JavaScript, based on a Figma design.",
             technologies: [ "html", "sass", "javascript"],
             demoURL: 'https://mariangle.github.io/figma-design-clone/',
             srcURL: "https://github.com/mariangle/figma-design-clone",

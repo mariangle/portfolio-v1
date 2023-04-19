@@ -30,6 +30,7 @@ function Project({project}) {
 }
 
 const StyledProject = styled(motion.div)`
+margin-top: 2rem;
 padding-bottom: 10rem;
 display: flex;
 flex-direction: column;
