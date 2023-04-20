@@ -5,13 +5,11 @@ import About from "./components/sections/About";
 import Projects from "./components/sections/Projects";
 import Contact from "./components/sections/Contact";
 
-import { pageAnim } from './animation';
-
 function Home() {
   return (
     <>
-        <Hero variants={pageAnim}/>    
-        <About />
+        <Hero/>    
+        <About/>
         <Projects />
         <Contact />
     </>

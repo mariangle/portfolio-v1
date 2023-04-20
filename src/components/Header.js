@@ -2,84 +2,61 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
-import { useLocation, Link } from 'react-router-dom';
+import { staggerAnim, titleAnim } from "../animation";
+import { motion } from 'framer-motion';
+import { Hide } from '../styles/styles';
 
-const Header = ({toggleTheme}) => {
+
+const Header = ({toggleTheme, theme}) => {
+  
   return (
-    <StyledNav>
-        <h1><Link to="/" id="logo"> &lt;<span>Maria</span>/&gt;</Link></h1>
+    <StyledNav variants={staggerAnim} initial="hidden" animate="show" >
+        <Logo><h1> &lt;<span>Maria</span>/&gt;</h1></Logo>
         <ul>
-            <li>
+          <Hide>
+            <motion.li variants={titleAnim}>
                <a className="link" href="#about"><span>01.</span> ABOUT</a>
-            </li>
-            <li>
+            </motion.li>
+          </Hide>
+          <Hide>
+            <motion.li variants={titleAnim}>
                 <a className="link" href="#projects"><span>02.</span> PROJECTS</a>
-            </li>
-            <li>
+            </motion.li>
+          </Hide>
+          <Hide>
+            <motion.li variants={titleAnim}>
                 <a className="link" href="#contact"><span>03.</span> CONTACT</a>
-            </li>
+              </motion.li>
+          </Hide>
             <li>
-                <Label className="label">
-                    <div className="icons">
-                        <FontAwesomeIcon className="icon" icon={faMoon} />
-                        <FontAwesomeIcon className="icon" icon={faSun} />
-                    </div>
-                    <input type="checkbox" onClick={toggleTheme}/>
-                    <span className="ball"></span>
-                </Label>
+              <Label className="label">
+                  {theme === "light" ? <FontAwesomeIcon className="icon" icon={faMoon} /> : <FontAwesomeIcon className="icon" icon={faSun} />}
+                  <input type=" " onClick={toggleTheme}/>
+              </Label>
             </li>
         </ul>
     </StyledNav>
   ) 
 }
-
 const Label = styled.label`
   cursor: pointer;
-  width: 35px;
-  height: 19px;
-  background-color: ${(props) => props.theme.headerColor};
-  display: flex;
-  border-radius: 50px;
-  align-items: center;
-  justify-content: space-evenly;
-  position: relative;
-  transform: scale(1.5);
   input {
-    cursor: pointer;
     opacity: 0;
-    position: absolute;
-  }
-  .icons {
-    padding: 0px 5px;
-    color: ${(props) => props.theme.backgroundColor};
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: gold;
-    .icon {
-      width: 10px;
-      height: 10px;
-    }
-  }
-  .ball {
-    width: 15px;
-    height: 15px;
-    background-color: ${(props) => props.theme.backgroundColor};
-    position: absolute;
-    left: 3px;
-    border-radius: 50%;
-    transition: transform 0.2s linear;
-  }
-  input:checked + .ball {
-    transform: translateX(15px);
+    margin: 0;
+    padding: 0;
+    width:  0;
   }
 `;
 
+const Logo = styled.div`
+h1{
+  font-size: 1rem;
+  font-weight: lighter;
+}
+`
 
-const StyledNav = styled.nav`
+const StyledNav = styled(motion.nav)`
+  max-width: 1080px;
   padding: 1rem 0rem;  
   display: flex;
   justify-content: space-between;
@@ -88,46 +65,33 @@ const StyledNav = styled.nav`
   z-index: 9999;
   width: 100%;
   margin: auto;
-  padding-left: 1rem;
+  padding: 1rem;
   top: 0;
-  left: 50%;
-transform: translateX(-50%);
-
-  h1 {
-    display: flex;
-    align-items: center;
-  }
-  Label {
-    display: flex;
-    align-items: center; 
-  }
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 ul{
-    padding: 1.5rem 8rem;
+    padding: 1rem 2rem;
     display: flex;
     align-items: center;
-    list-style: none;
-    gap: 5vw;
-    backdrop-filter: blur(5px);
+    gap: 2rem;
+    backdrop-filter: blur(10px);
     background-color: ${props => props.theme.navBackground};
     border: 2px solid ${(props) => props.theme.secondBackground};
 }
 li{
     bottom: 0;
     position: relative;
+    font-size: 0.8rem;
     a{
-        left: 0%;
-        span{
+      span{
       font-family:  var(--font-mono);
-      font-size: 0.8rem;
-      @media (max-width: 700px){
-        display: none;
-      }
     }
-    }
+  }
 }
 #logo{
     font-size: 1.5rem;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: lighter;
     color: ${props => props.theme.headerColor};
 }
@@ -139,7 +103,6 @@ li{
     padding: 0rem;
     margin: 0;
     ul{
-        color: red;
         justify-content: space-evenly;
         width: 100%;
         li{

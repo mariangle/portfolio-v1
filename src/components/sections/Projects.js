@@ -15,7 +15,8 @@ const projects = projectState();
     <StyledProjects id="projects">
       <h2><span>02.</span> Projects</h2>
       <Featured/>
-      <h2>Other Projects</h2>
+      <h3>Other Projects</h3>
+      <a href=""><span>archive</span></a>
       <ProjectGrid>
         {projects.map((project, index) => (
           <Project project={project} key={index}/> 
@@ -36,9 +37,10 @@ const StyledProjects = styled(motion.div)`
 `
 
 const ProjectGrid = styled.div`
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    gap: 1rem;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1rem;
 
 `
 

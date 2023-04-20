@@ -2,14 +2,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Container, Description, Hide, StyledButton } from "../../styles/styles";
-import { titleAnim, fadeAnim, pageAnim } from "../../animation";
+import { Container, Description, Hide } from "../../styles/styles";
+import { titleAnim, fadeAnim, staggerAnim } from "../../animation";
 import Wave from "../../assets/img/Wave";
 
 
 const HeroSection = () => {
     return(
-        <StyledContainer exit="exit" variants={pageAnim} initial="hidden" animate="show">
+        <StyledContainer variants={staggerAnim} initial="hidden" animate="show">
             <Description>
                 <motion.div>
                     <Hide>
@@ -21,9 +21,6 @@ const HeroSection = () => {
                 </motion.div>
                 <motion.p variants={fadeAnim}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia quisquam illo sapiente doloribus repellendus temporibus porro magni, excepturi cum cumque? Commodi ipsum expedita quasi sed atque ullam ea modi ipsa consequuntur!</motion.p>
                 <ButtonContainer>
-                    <Link to="/projects">
-                        <StyledButton variants={fadeAnim}>Projects</StyledButton>
-                    </Link>
                     <Link to="https://github.com/mariangle" target="_blank">
                         <motion.button variants={fadeAnim}>Github</motion.button>
                     </Link>

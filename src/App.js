@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import Theme from './styles/Theme';
 import GlobalStyle from './styles/GlobalStyles';
 import ScrollTop from './components/util/ScrollTop';
@@ -23,9 +23,11 @@ function App() {
     <div className="App">
       <Theme theme={theme}>
         <GlobalStyle />
-        <Header toggleTheme={toggleTheme} />
+        <Header toggleTheme={toggleTheme} theme={theme}/>
         <ScrollTop />
-        <Home />
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
       </Theme>
     </div>
   );

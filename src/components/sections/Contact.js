@@ -1,13 +1,19 @@
 import React from 'react'
 // animations
 import {motion} from "framer-motion"
-import {Container, Circle, Social} from "../../styles/styles";
-import { pageAnim, titleAnim } from "../../animation"
+import {Container} from "../../styles/styles";
+import { slideAnim, titleAnim } from "../../animation"
 import styled from 'styled-components'
 
-const Contact = () => {
+import { useScroll } from '../util/useScroll';
+
+
+const Contact = () => { 
+  const [ref, controls] = useScroll();
+
+  
   return (
-    <ContactStyle exit="exit" variants={pageAnim} initial="hidden" animate="show" id="contact">
+    <ContactStyle>
       <div>
         <Hide>
           <motion.h2 variants={titleAnim}><span>03.</span> Contact</motion.h2>
@@ -19,12 +25,6 @@ const Contact = () => {
             Name:
             <input type="text" />
           </label>
-        </Hide>
-        <Hide>
-          <label htmlFor="">
-            Topic:
-            <input type="text" />
-          </label>        
         </Hide>
         <Hide>
           <label htmlFor="">
@@ -40,7 +40,7 @@ const Contact = () => {
 
 const ContactStyle = styled(Container)`
 flex-direction: column;
-align-items: flex-start;
+align-items: center;
 justify-content: center;
 @media (max-width: 650px){
   padding: 2rem;
@@ -52,6 +52,7 @@ justify-content: center;
 
 const Hide = styled.div`
 overflow: hidden;
+width: 100%;
 `
 
 export default Contact;

@@ -51,3 +51,14 @@ export const Social = styled(motion.div)`
 display: flex;
 align-items: center;
 `
+
+export const Technologies = styled.ul`
+margin-top: 1rem;
+display: flex;
+gap: 0.5rem;
+li{
+  background: ${props => props.theme.thirdBackground};
+  padding: 0.2rem 0.2rem;
+  font-size: 0.8rem;
+}
+` 

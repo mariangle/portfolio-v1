@@ -35,11 +35,10 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    letter-spacing: 1px;
-    color: var(--color-header);
-    font-size: 1.1rem;
+    color: var(--color-main);
+    font-family: var(--font-mono);
     cursor: pointer;
-    padding: 1rem 2rem;
+    padding: 0.5rem;
     border: 2px solid var(--color-main);
     background: transparent;
     transition: all 0.5s ease;

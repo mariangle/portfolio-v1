@@ -6,21 +6,21 @@ import styled from "styled-components";
 import AboutMe from "../AboutMe";
 import Namespace from "../Namespace";
 // import animations
-import { slideAnim } from "../../animation";
+import { pageAnim, slideAnim } from "../../animation";
 import { useScroll } from "../util/useScroll";
+
+import { motion } from "framer-motion";
 
 
 const About = () => {
     const [ref, controls] = useScroll();
-    const [ref2, controls2] = useScroll();
     
     return(
-        <StyledAbout id="about">
+        <StyledAbout animate={controls} ref={ref}>
             <h2><span>01.</span> About Me</h2>
             <AboutContainer>
-                <AboutMe variants={slideAnim.right} animate={controls} initial="hidden" 
-                ref={ref} />
-                <Namespace  variants={slideAnim.leftWithDelay} animate={controls2} initial="hidden" ref={ref2} />
+                <AboutMe variants={slideAnim.right} id="about" exit="exit" initial="hidden"/>
+                <Namespace />
             </AboutContainer>
         </StyledAbout>
     )

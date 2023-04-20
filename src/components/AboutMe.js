@@ -1,10 +1,17 @@
 import React from 'react'
 import {Description, Social, Circle} from "../styles/styles";
 import styled from 'styled-components';
+import { useScroll } from "./util/useScroll";
+import { pageAnim, slideAnim } from "../animation";
+
+
 
 function AboutMe() {
+  const [ref, controls] = useScroll();
+
+
   return (
-    <StyledAboutMe>
+    <StyledAboutMe animate={controls} ref={ref} variants={slideAnim.right} id="about">
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam expedita a omnis. Dignissimos aperiam  <span>pariatur</span> et consectetur aut quisquam magni doloremque facere dolor adipisci consequatur <span>corrupti quo</span>, exercitationem quaerat. Eaque accusamus placeat impedit cum quia.</p>
       <Technologies>
         <Social>

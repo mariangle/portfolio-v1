@@ -1,4 +1,4 @@
-export const pageAnim = {
+export const staggerAnim = {
     hidden: {
         opacity: 0,
         y: 300
@@ -7,7 +7,7 @@ export const pageAnim = {
         opacity: 1,
         y: 0,
         transition: {
-            duration: 0.4,
+            duration: 0.2,
             when: "beforeChildren",
             staggerChildren: 0.25
         }
