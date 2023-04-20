@@ -9,14 +9,6 @@ export const projectState = () => {
             date: "",
         },
         {
-            title: 'Ecommerce',
-            description: "Full-stack e-commerce app for buying sneakers. Designed for practical learning, built using front-end & back-end techniques.",
-            technologies: [ "react", "c#", "sql", ".net framework"],
-            demoURL: '',
-            srcURL: "https://github.com/mariangle/ecommerce-app-ms-sql-net-react",
-            date: "",
-        },
-        {
             title: 'Color Generator',
             description: "Coloors is a color palette generator that lets you save, adjust, and preview color palettes, as well as copy them to the clipboard for easy use in other applications.",
             technologies: [ "html", "css", "javascript"],

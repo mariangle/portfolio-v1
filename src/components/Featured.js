@@ -2,10 +2,16 @@ import React from 'react'
 import styled from 'styled-components'
 import pro1img1 from "../assets/img/project1-1.jpg"
 import { Technologies } from '../styles/styles'
+import { slideAnim } from "../animation"
+import { useScroll } from './util/useScroll';
+import {motion} from "framer-motion"
+
 
 function Featured() {
+  const [ref, controls] = useScroll();
+
   return (
-    <StyledFeatured>
+    <StyledFeatured animate={controls} ref={ref}>
         <Project>
             <About>
                 <p><span>Featured</span></p>
@@ -26,7 +32,7 @@ function Featured() {
   )
 }
 
-const StyledFeatured = styled.div`
+const StyledFeatured = styled(motion.div)`
 margin-bottom: 2rem;
 `
 

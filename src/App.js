@@ -4,7 +4,7 @@ import Theme from './styles/Theme';
 import GlobalStyle from './styles/GlobalStyles';
 import ScrollTop from './components/util/ScrollTop';
 import Header from './components/Header';
-
+import CustomCursor from './components/Cursor';
 import Home from './Home';
 
 function App() {
@@ -22,6 +22,7 @@ function App() {
   return (
     <div className="App">
       <Theme theme={theme}>
+      <CustomCursor />
         <GlobalStyle />
         <Header toggleTheme={toggleTheme} theme={theme}/>
         <ScrollTop />

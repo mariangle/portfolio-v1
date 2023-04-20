@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { motion } from "framer-motion"
 
 function Namespace() {
+
   return (
     <StyledNamespace>
         <Window>
@@ -80,7 +81,7 @@ span{
     }
 }
 `
-const Window = styled.div`
+const Window = styled(motion.div)`
 display: flex;
 width: 100%;
 flex-direction: row;
@@ -100,7 +101,7 @@ justify-content: flex-start;
     }
 }
 `
-const Properties = styled.div`
+const Properties = styled(motion.div)`
     margin-left: 1.5rem;
     p span, p{
         font-size: 1rem;

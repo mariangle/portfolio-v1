@@ -28,7 +28,7 @@ const darkTheme = {
   textColor: "#bdbdbd",
   mainColor: "#5eefce",
   darkMain: "#2c6d5e",  
-  secondColor: "#b474f8",
+  secondColor: "#4f7bad",
   gradientColor: "linear-gradient(45deg, #5eefce, #4f7bad)",
   scrollBar: "rgba(70, 69, 69, 0.3);",
   keyword: "#326cb8",

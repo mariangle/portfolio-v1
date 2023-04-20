@@ -9,7 +9,7 @@ export const useScroll = () => {
   useEffect(() => {
     if (inView) {
       controls.start("show");
-    } if (inView < 0.1) {
+    } else {
       controls.start("exit");
     }
   }, [controls, inView]);

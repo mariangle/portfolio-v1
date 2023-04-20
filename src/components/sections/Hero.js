@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Container, Description, Hide } from "../../styles/styles";
-import { titleAnim, fadeAnim, staggerAnim } from "../../animation";
+import { fadeAnim, slideAnim, staggerAnim } from "../../animation";
 import Wave from "../../assets/img/Wave";
 
 
@@ -13,10 +13,10 @@ const HeroSection = () => {
             <Description>
                 <motion.div>
                     <Hide>
-                        <motion.h2 variants={titleAnim}>Hi, I'm </motion.h2>
+                        <motion.h2 variants={slideAnim.up}>Hi, I'm </motion.h2>
                     </Hide>
                     <Hide>
-                        <motion.h2 variants={titleAnim}> a <span>Lorem, ipsum.</span></motion.h2>
+                        <motion.h2 variants={slideAnim.up}> a <span>Lorem, ipsum.</span></motion.h2>
                     </Hide>
                 </motion.div>
                 <motion.p variants={fadeAnim}> Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia quisquam illo sapiente doloribus repellendus temporibus porro magni, excepturi cum cumque? Commodi ipsum expedita quasi sed atque ullam ea modi ipsa consequuntur!</motion.p>

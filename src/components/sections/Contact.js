@@ -2,7 +2,7 @@ import React from 'react'
 // animations
 import {motion} from "framer-motion"
 import {Container} from "../../styles/styles";
-import { slideAnim, titleAnim } from "../../animation"
+import { slideAnim } from "../../animation"
 import styled from 'styled-components'
 
 import { useScroll } from '../util/useScroll';
@@ -11,12 +11,11 @@ import { useScroll } from '../util/useScroll';
 const Contact = () => { 
   const [ref, controls] = useScroll();
 
-  
   return (
-    <ContactStyle>
+    <ContactStyle animate={controls} ref={ref} variants={slideAnim.up} id="contact">
       <div>
         <Hide>
-          <motion.h2 variants={titleAnim}><span>03.</span> Contact</motion.h2>
+          <motion.h2><span>03.</span> Contact</motion.h2>
         </Hide>
       </div>
       <div>

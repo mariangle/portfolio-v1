@@ -2,39 +2,32 @@ import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
-import { staggerAnim, titleAnim } from "../animation";
+import { staggerAnim, slideAnim } from "../animation";
 import { motion } from 'framer-motion';
-import { Hide } from '../styles/styles';
 
 
 const Header = ({toggleTheme, theme}) => {
   
   return (
-    <StyledNav variants={staggerAnim} initial="hidden" animate="show" >
+    <StyledNav variants={slideAnim.down} initial="hidden" animate="show" >
         <Logo><h1> &lt;<span>Maria</span>/&gt;</h1></Logo>
-        <ul>
-          <Hide>
-            <motion.li variants={titleAnim}>
+        <motion.ul  variants={staggerAnim}>
+            <motion.li variants={slideAnim.down}>
                <a className="link" href="#about"><span>01.</span> ABOUT</a>
             </motion.li>
-          </Hide>
-          <Hide>
-            <motion.li variants={titleAnim}>
+            <motion.li variants={slideAnim.down}>
                 <a className="link" href="#projects"><span>02.</span> PROJECTS</a>
             </motion.li>
-          </Hide>
-          <Hide>
-            <motion.li variants={titleAnim}>
+            <motion.li variants={slideAnim.down}>
                 <a className="link" href="#contact"><span>03.</span> CONTACT</a>
-              </motion.li>
-          </Hide>
+            </motion.li>
             <li>
               <Label className="label">
                   {theme === "light" ? <FontAwesomeIcon className="icon" icon={faMoon} /> : <FontAwesomeIcon className="icon" icon={faSun} />}
                   <input type=" " onClick={toggleTheme}/>
               </Label>
             </li>
-        </ul>
+        </motion.ul>
     </StyledNav>
   ) 
 }
@@ -62,7 +55,7 @@ const StyledNav = styled(motion.nav)`
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  z-index: 9999;
+  z-index: 99;
   width: 100%;
   margin: auto;
   padding: 1rem;
