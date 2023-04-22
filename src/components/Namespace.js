@@ -30,9 +30,6 @@ function Namespace() {
 
 const Class = styled.div`
  margin-left: 1.5rem;
-    p span, p{
-        font-size: 1rem;
-    }
     span{
         color: ${props => props.theme.keyword};
     }
@@ -62,23 +59,16 @@ h4{
     color: ${props => props.theme.className};
     display: inline-block;
 }
-p{
+p, span, div{
+    font-size: 0.8rem;
     text-align: left;
     color: ${props => props.theme.headerColor};
-}
-p span, p, h4{
-    font-family: sans-serif;
-    font-size: 1rem;
 }
 span{
     color: ${props => props.theme.keyword};
 }
-@media (max-width: 1300px){
-}
-@media (max-width: 500px){
-    p, h4, p span{
-        font-size: 80%;
-    }
+@media (max-width: 850px){
+    margin-top: 3rem;
 }
 `
 const Window = styled(motion.div)`
@@ -87,6 +77,7 @@ width: 100%;
 flex-direction: row;
 align-items: center;
 justify-content: flex-start;
+margin-bottom: 1rem;
 .circle{
     height: 10px;
     width: 10px;
@@ -103,9 +94,6 @@ justify-content: flex-start;
 `
 const Properties = styled(motion.div)`
     margin-left: 1.5rem;
-    p span, p{
-        font-size: 1rem;
-    }
     span{
         color: ${props => props.theme.keyword};
     }

@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 // components
-import ScrollTop from '../util/ScrollTop';
 // animations
 import {motion} from "framer-motion";
 import { projectState } from '../../projectState';
 import Project from '../Project';
 import Featured from '../Featured';
-import { slideAnim, staggerAnim } from "../../animation"
+import { slideAnim } from "../../animation"
 
 import { useScroll } from '../util/useScroll';
 
 function Projects() {
 const projects = projectState();
 const [ref, controls] = useScroll();
-const [ref2, controls2] = useScroll();
 
   return (
     <StyledProjects id="projects">
@@ -24,7 +22,7 @@ const [ref2, controls2] = useScroll();
       </FeaturedContainer>
       <GridContainer>
         <h3>Other Projects</h3>
-        <a href=""><span>archive</span></a>
+        <a href="/"><span>archive</span></a>
         <ProjectGrid>
           {projects.map((project, index) => (
             <Project project={project} key={index}/> 

@@ -9,9 +9,7 @@ export const Container = styled(motion.div)`
   justify-content: center;
   max-width: 1080px;
   margin: auto;
-  padding: 5rem 1rem;
-  @media (max-width: 1200px) {
-  }
+  padding: 5rem 2rem;
 `;
 
 export const Description = styled(motion.div)`

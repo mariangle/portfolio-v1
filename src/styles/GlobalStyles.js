@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
   html {
     scroll-behavior: smooth;  
     @media (max-width: 800px) {
-      font-size: 75%;
+      font-size: 80%;
     }
   }
 
