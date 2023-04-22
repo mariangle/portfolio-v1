@@ -1,33 +1,44 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon, faBars } from '@fortawesome/free-solid-svg-icons';
 import { staggerAnim, slideAnim } from "../animation";
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 
 const Header = ({toggleTheme, theme}) => {
+  const [isActive, setIsActive] = useState(false);
+
+  function handleToggle() {
+    setIsActive(!isActive);
+  }
+
+  function handleLinkClick() {
+    setIsActive(false);
+  }
   
   return (
     <StyledNav variants={slideAnim.down} initial="hidden" animate="show" >
         <Logo><h1> &lt;<span>Maria</span>/&gt;</h1></Logo>
-        <motion.ul  variants={staggerAnim}>
+        <motion.ul  variants={staggerAnim} className={`${isActive ? "active" : ""}`}>
             <motion.li variants={slideAnim.down}>
-               <a className="link" href="#about"><span>01.</span> ABOUT</a>
+              <a href="#about" onClick={handleLinkClick}><span>01.</span> ABOUT</a>
             </motion.li>
             <motion.li variants={slideAnim.down}>
-                <a className="link" href="#projects"><span>02.</span> PROJECTS</a>
+                <a href="#projects" onClick={handleLinkClick}><span>02.</span> PROJECTS</a>
             </motion.li>
             <motion.li variants={slideAnim.down}>
-                <a className="link" href="#contact"><span>03.</span> CONTACT</a>
+                <a href="#contact" onClick={handleLinkClick}><span>03.</span> CONTACT</a>
             </motion.li>
             <li>
               <Label className="label">
                   {theme === "light" ? <FontAwesomeIcon className="icon" icon={faMoon} /> : <FontAwesomeIcon className="icon" icon={faSun} />}
-                  <input type=" " onClick={toggleTheme}/>
+                  <input onClick={toggleTheme}/>
               </Label>
             </li>
         </motion.ul>
+        <FontAwesomeIcon className="burger" icon={faBars} onClick={handleToggle}></FontAwesomeIcon>
     </StyledNav>
   ) 
 }
@@ -42,15 +53,15 @@ const Label = styled.label`
 `;
 
 const Logo = styled.div`
+  z-index: 9999;
 h1{
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: lighter;
 }
 `
 
 const StyledNav = styled(motion.nav)`
   max-width: 1080px;
-  padding: 1rem 0rem;  
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -58,11 +69,20 @@ const StyledNav = styled(motion.nav)`
   z-index: 99;
   width: 100%;
   margin: auto;
-  padding: 1rem;
+  padding: 2rem;
   top: 0;
   left: 0;
   right: 0;
   margin: 0 auto;
+  .burger{
+    display: none;
+    z-index: 9999;
+    font-size: 1.2rem;
+  }
+  @media (max-width: 800px){
+    background-color: ${props => props.theme.navBackground};
+    border-bottom: 2px solid ${(props) => props.theme.secondBackground};
+  }
 ul{
     padding: 1rem 2rem;
     display: flex;
@@ -71,40 +91,36 @@ ul{
     backdrop-filter: blur(10px);
     background-color: ${props => props.theme.navBackground};
     border: 2px solid ${(props) => props.theme.secondBackground};
-}
-li{
-    bottom: 0;
-    position: relative;
-    font-size: 0.8rem;
     a{
+      font-size: 0.8rem;
       span{
       font-family:  var(--font-mono);
+      font-size: 0.7rem;
     }
   }
 }
-#logo{
-    font-size: 1.5rem;
-    font-family: 'Poppins', sans-serif;
-    font-weight: lighter;
-    color: ${props => props.theme.headerColor};
-}
-@media (max-width: 700px){
-    padding: 1.5rem 1rem 1.5rem 2rem;
-    backdrop-filter: blur(20px);
-    background-color: ${props => props.theme.navBackground};
-    box-shadow: ${props => props.theme.navShadow};    flex-direction: column;
-    padding: 0rem;
-    margin: 0;
+
+@media (max-width: 800px){
+  .burger{
+    display: block;
+  }
     ul{
-        justify-content: space-evenly;
-        width: 100%;
-        li{
-            padding: 0;
-        }
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s ease;    
+      display: none;  
+      li a, a span{
+        font-size: 1.6rem;
+      }
     }
-    #logo{
-        display: inline-block;
-        margin: 2rem;
+    ul.active{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: fixed;
+      overflow-x: hidden;
     }
 }
 `
