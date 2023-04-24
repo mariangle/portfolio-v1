@@ -6,9 +6,12 @@ const GlobalStyle = createGlobalStyle`
     --color-text: ${props => props.theme.textColor};
     --color-main: ${props => props.theme.mainColor};
     --color-bg: ${props => props.theme.backgroundColor};
-    --color-scroll-track: ${props => props.theme.scrollTrack};
-    --color-scroll-bar: ${props => props.theme.mainColor};
-    --gradient: ${props => props.theme.gradientColor};
+    --color-nav: ${props => props.theme.navBackground};
+    --color-shadow: ${props => props.theme.boxShadow};
+    --color-bg-2: ${props => props.theme.secondBackground};
+    --color-border: ${props => props.theme.borderColor};
+    --color-second: ${props => props.theme.secondColor};
+    --color-gradient: ${props => props.theme.gradientColor};
     --font-mono: "Roboto Mono", sans-serif;
     --font-sans: "Poppins", sans-serif;
   }
@@ -36,16 +39,16 @@ const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    color: var(--color-main);
-    font-family: var(--font-mono);
+    letter-spacing: 1px;
+    color: white;
     cursor: pointer;
-    padding: 0.5rem;
-    border: 2px solid var(--color-main);
-    background: transparent;
-    transition: all 0.5s ease;
-
+    padding: 0.75rem 1.5rem;
+    border: none;
+    background: var(--color-main);
+    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
     &:hover {
-      background-color: transparent;
+      background: var(--color-second);
     }
   }
 
@@ -75,6 +78,10 @@ const GlobalStyle = createGlobalStyle`
     span{
         font-family: var(--font-mono);
         font-size: 1.2rem;
+        background-image: var(--color-gradient);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
   } 
 
@@ -99,26 +106,30 @@ const GlobalStyle = createGlobalStyle`
   }
 
   *::-webkit-scrollbar-track {
-    background: var(--color-scroll-track);
+    background-color: var(--color-main);
   }
 
   *::-webkit-scrollbar-thumb {
-    background-color: var(--color-scroll-bar);
+    background: var(--color-second);
     border: transparent;
     border-radius: 8px;
   }
 
   textarea, input{
     padding: 1rem;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-family: var(--font-sans);
-    color: var(--color-header);
     width: 100%;
     margin-bottom: 1rem;
     border: none;
-    border-bottom: 2px solid var(--color-header);
-    background: none;
+    background: var(--color-bg);
+    border-radius: 10px;
+      color: var(--color-text);
   }
+
+  input::placeholder,  textarea::placeholder {
+  color: var(--color-text);
+}
 `;
 
 export default GlobalStyle;

@@ -9,6 +9,7 @@ import Featured from '../Featured';
 import { slideAnim } from "../../animation"
 
 import { useScroll } from '../util/useScroll';
+import { Link } from 'react-router-dom';
 
 function Projects() {
 const projects = projectState();
@@ -16,13 +17,13 @@ const [ref, controls] = useScroll();
 
   return (
     <StyledProjects id="projects">
-      <FeaturedContainer animate={controls} ref={ref} variants={slideAnim.left}>
+      <FeaturedContainer animate={controls} ref={ref} variants={slideAnim.up}>
         <h2><span>02.</span> Projects</h2>
         <Featured/>
       </FeaturedContainer>
       <GridContainer>
-        <h3>Other Projects</h3>
-        <a href="/"><span>archive</span></a>
+        <h3>Other Highlighted Projects</h3>
+        <Link to="/archive"><span>View Archive</span></Link>
         <ProjectGrid>
           {projects.map((project, index) => (
             <Project project={project} key={index}/> 
@@ -36,7 +37,7 @@ const [ref, controls] = useScroll();
 const StyledProjects = styled(motion.div)`
     max-width: 1080px;
     padding: 1rem;
-    margin: auto;
+    margin: 5rem auto;
     display: flex;
     align-items: center;
     flex-direction: column;

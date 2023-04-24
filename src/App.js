@@ -5,6 +5,7 @@ import GlobalStyle from './styles/GlobalStyles';
 import Header from './components/Header';
 import CustomCursor from './components/Cursor';
 import Home from './Home';
+import Archive from './Archive';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -26,6 +27,7 @@ function App() {
         <Header toggleTheme={toggleTheme} theme={theme}/>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/archive" element={<Archive />} />
         </Routes>
       </Theme>
     </div>

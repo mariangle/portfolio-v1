@@ -19,8 +19,8 @@ function Project({project}) {
             <ProjectTop>
               <StyledFontAwesomeIcon icon={faFolder}></StyledFontAwesomeIcon>
               <motion.ul>
-                {project.srcURL && <li><a href={project.srcURL} target="_blank"><FontAwesomeIcon icon={faCode}></FontAwesomeIcon></a></li>}
-                {project.demoURL && <li><a href={project.demoURL} target="_blank"><FontAwesomeIcon icon={faLink}></FontAwesomeIcon></a></li>}
+                {project.srcURL && <li><a href={project.srcURL} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faCode}></FontAwesomeIcon></a></li>}
+                {project.demoURL && <li><a href={project.demoURL} target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faLink}></FontAwesomeIcon></a></li>}
               </motion.ul>
             </ProjectTop>
             <h3>{project.title}</h3>
@@ -40,10 +40,10 @@ padding-bottom: 10rem;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
-background: ${props => props.theme.secondBackground};
+background: var(--color-bg-2);
 padding: 2rem;
 border-radius: 10px;
-transition: 0.2s ease-in-out;
+transition: 0.2s all ease-in-out;
 p{
   font-size: 0.8rem;
 }
@@ -51,10 +51,15 @@ h3{
   margin: 1rem 0 0.5rem;
 }
 &:hover{
-  transform: translateY(-5px)
-}
+  background: var(--color-gradient);
+  h3{
+    color: white;
+  }
+  p{
+    color: #cccccc;
+  }
+  }
 `   
-
 const ProjectTop = styled.div`
 display: flex;
 justify-content: space-between;
@@ -63,12 +68,11 @@ ul{
   gap: 1rem;
 }
 `
-
 const Header = styled.div`
 `
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-color: ${props => props.theme.mainColor};
+color: var(--color-main);
 font-size: 2rem;
  ` 
 

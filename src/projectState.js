@@ -1,14 +1,6 @@
 export const projectState = () => {
     return [
         {
-            title: 'Portfolio',
-            description: "A single page React portfolio built with styled-components and Framer Motion",
-            technologies: [ "react", "styled-components", "framer-motion"],
-            demoURL: 'https://github.com/mariangle/react-portfolio-styled-motion',
-            srcURL: "https://github.com/mariangle/react-portfolio-styled-motion",
-            date: "",
-        },
-        {
             title: 'Color Generator',
             description: "Coloors is a color palette generator that lets you save, adjust, and preview color palettes, as well as copy them to the clipboard for easy use in other applications.",
             technologies: [ "html", "css", "javascript"],
@@ -45,23 +37,7 @@ export const projectState = () => {
             description: "First Unity game created for learning purposes.",
             technologies: [ "unity", "c#"],
             demoURL: 'https://marianle.itch.io/baby-ben',
-            srcURL: "",
-            date: "",
-        },
-        {
-            title: 'Photon',
-            description: "A simple web app that fetches and displays pictures from the Pexels API to learn external API integration.",
-            technologies: [ "api", "html", "css", "javascript"],
-            demoURL: 'https://mariangle.github.io/pexels-api-fetcher/',
-            srcURL: "https://github.com/mariangle/pexels-api-fetcher",
-            date: "",
-        },
-        {
-            title: 'Todo List',
-            description: "As my first app, I created a JavaScript-based todo list application. It allows users to add, mark as complete, and delete items from their list, and stores data using local storage.",
-            technologies: [ "html", "css", "javascript"],
-            demoURL: 'https://mariangle.github.io/pexels-api-fetcher/',
-            srcURL: "https://github.com/mariangle/pexels-api-fetcher",
+            srcURL: "https://github.com/mariangle/baby-ben-unity",
             date: "",
         }
     ]

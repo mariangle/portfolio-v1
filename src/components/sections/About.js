@@ -1,6 +1,6 @@
 import React from "react";
 
-import {Container} from "../../styles/styles";
+import { Container, Div} from "../../styles/styles";
 import styled from "styled-components";
 
 import AboutMe from "../AboutMe";
@@ -15,13 +15,15 @@ const About = () => {
     const [ref, controls] = useScroll();
     
     return(
-        <StyledAbout animate={controls} ref={ref} variants={slideAnim.right} id="about">
+    <Div>
+        <StyledAbout animate={controls} ref={ref} id="about" variants={slideAnim.right}>
             <motion.h2><span>01.</span> About Me</motion.h2>
             <AboutContainer>
                 <AboutMe/>
                 <Namespace />
             </AboutContainer>
         </StyledAbout>
+    </Div>
     )
 }
 

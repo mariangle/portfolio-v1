@@ -6,23 +6,25 @@ function AboutMe() {
 
   return (
     <StyledAboutMe>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam expedita a omnis. Dignissimos aperiam  <span>pariatur</span> et consectetur aut quisquam magni doloremque facere dolor adipisci consequatur <span>corrupti quo</span>, exercitationem quaerat. Eaque accusamus placeat impedit cum quia.</p>
+    <p>Studying back-end development helped me realize my natural flair towards UI/UX design. This led me to explore <span>self-taught front-end development</span> and work towards my goal of becoming a <span>full-stack developer</span>. I aim to combine my skills in both areas and continue to learn and experiment with new technologies. </p> <br />
+
+    <li>Recent technologies I've used:</li>
       <Technologies>
         <Social>
           <Circle/>
-          <li>Lorem.</li>
+          <li>React</li>
         </Social>
         <Social>
           <Circle/>
-          <li>Lorem.</li>
+          <li>Javascript</li>
         </Social>
         <Social>
           <Circle/>
-          <li>Lorem.</li>
+          <li>C#</li>
         </Social>
         <Social>
           <Circle/>
-          <li>Lorem.</li>
+          <li>SQL</li>
         </Social>
       </Technologies>
     </StyledAboutMe>  
@@ -34,6 +36,10 @@ align-items: flex-start;
 justify-content: flex-start;
 flex: 3;
 margin-right: 2rem;
+p span{
+  font-family: var(--font-sans);
+  font-weight: 600;
+}
 `
 
 const Technologies = styled.div`

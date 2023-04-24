@@ -4,6 +4,7 @@ import { motion } from "framer-motion"
 
 function Namespace() {
 
+
   return (
     <StyledNamespace>
         <Window>
@@ -12,15 +13,15 @@ function Namespace() {
             <div className="circle3 circle"></div>
         </Window>
         <p>
-            <span>namespace</span> Github<br/>&#123;
+            <span>namespace</span> Portfolio<br/>&#123;
         </p>
             <Class>
                 <span>public class</span> Maria : Person<br />
                 &#123; <br/>
                 <Properties>
-                    <span>public int</span>  Age &#123; get; &#125; = saddsa;<br/>
-                    <span>public string</span> City &#123; get; &#125; = "dsadasds";<br/>
-                    <span>public string</span>  Studying &#123; get; &#125; = "sdadsadas";<br/>
+                    <span>public int</span>  Age &#123; get; &#125; = 21;<br/>
+                    <span>public string</span> City &#123; get; &#125; = "Odense";<br/>
+                    <span>public string</span> Studying &#123; get; &#125; = "UCL";<br/>
                 </Properties>
                 &#125;
             </Class>
@@ -37,9 +38,11 @@ const Class = styled.div`
 
 const StyledNamespace = styled(motion.div)`
 border-radius: 20px;
-border: 5px solid ${props => props.theme.secondBackground};;
-background: ${props => props.theme.navBackground};
-padding: 1rem;
+height: 17rem;
+border: 4px solid var(--color-border);
+background: var(--color-bg);
+box-shadow: var(--color-shadow);
+padding: 2rem;
 transition: 0.1s ease-in-out;
 flex: 2;
 animation: float 3s infinite alternate;

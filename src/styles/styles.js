@@ -1,9 +1,14 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
+export const Div = styled(motion.div)`
+background: ${props => props.theme.secondBackground};
+`
+
+
 export const Container = styled(motion.div)`
   z-index: 2;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,19 +29,6 @@ export const Hide = styled.div`
   overflow: hidden;
 `;
 
-export const StyledButton = styled(motion.button)`
-background: ${props => props.theme.mainColor};
-color: ${props => props.theme.darkMain};
-border: 2px solid ${props => props.theme.mainColor};
-margin-right: 1rem;
-&:hover{
-  color:  ${props => props.theme.headerColor};
-}
-@media (max-width: 1300px){
-    margin-bottom: 2rem;
-}
-`
-
 export const Circle = styled.div`
 border-radius: 50%;
 width: 0.5rem;
@@ -55,8 +47,9 @@ margin-top: 1rem;
 display: flex;
 gap: 0.5rem;
 li{
-  background: ${props => props.theme.thirdBackground};
-  padding: 0.2rem 0.2rem;
+  background: ${props => props.theme.backgroundColor};
+  padding: 0.3rem 0.5rem;
   font-size: 0.8rem;
+  border-radius: 10px;
 }
 ` 

@@ -53,7 +53,7 @@ export const slideAnim = {
         show: {
             opacity: 1,
             y: 0,
-            transition: { duration: 0.75, ease: "easeOut" }
+            transition: { duration: 0.5, ease: "easeOut" }
         },
         exit: {
             opacity: 0,
@@ -81,10 +81,4 @@ export const slideAnim = {
         }
     }
 }
-export const fadeAnim = {
-    hidden: {opacity: 0},
-    show: {
-        opacity: 1,
-        transition: {ease: "easeOut", duration: 0.75 }
-    }
-}
+
