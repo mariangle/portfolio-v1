@@ -22,8 +22,8 @@ const [ref, controls] = useScroll();
         <Featured/>
       </FeaturedContainer>
       <GridContainer>
-        <h3>Other Highlighted Projects</h3>
-        <Link to="/archive"><span>View Archive</span></Link>
+        <h3><span>Other</span> featured Projects</h3>
+        <Link to="/archive"><span>view archive</span></Link>
         <ProjectGrid>
           {projects.map((project, index) => (
             <Project project={project} key={index}/> 

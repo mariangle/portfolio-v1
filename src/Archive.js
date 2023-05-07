@@ -24,27 +24,28 @@ function Archive() {
 
     useEffect(() => {
         const fetchRepositories = async () => {
-            const response = await fetch("https://api.github.com/users/mariangle/repos");
-            const repositories = await response.json();
-        
-            const languagePromises = repositories.map(async (repo) => {
-                const languageResponse = await fetch(repo.languages_url);
-                const languageData = await languageResponse.json();
-                const languageNames = Object.keys(languageData);
-                return languageNames;
-            });
-        
-            const languages = await Promise.all(languagePromises);
-        
-            repositories.map((repo, index) => {
-                repo.languages = languages[index];
-            });
-        
-            setRepos(repositories);
+          const response = await fetch("https://api.github.com/users/mariangle/repos");
+          const repositories = await response.json();
+      
+          const languages = await Promise.all(repositories.map(async (repo) => {
+            const languageResponse = await fetch(repo.languages_url);
+            const languageData = await languageResponse.json();
+            return Object.keys(languageData);
+          }));
+      
+          const reposWithLanguages = repositories.map((repo, index) => {
+            return {
+              ...repo,
+              languages: languages[index]
+            };
+          });
+      
+          setRepos(reposWithLanguages);
         };
-
+      
         fetchRepositories();
-    }, []);
+      }, []);
+
 
   return (
     <StyledArchive>
@@ -60,7 +61,7 @@ function Archive() {
                 </tr>
             </thead>
             <tbody>
-                {repos  
+                {repos.length === 0 ? <div>Loading...</div> : repos  
                 .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
                 .map((repo, index) => (
                     <tr key={index}>   
@@ -77,8 +78,8 @@ function Archive() {
                             ))}
                         </td>
                         <td>
-                            <a href={repo.html_url} target="_blank"><FontAwesomeIcon icon={faCodeBranch}></FontAwesomeIcon></a>
-                            {repo.homepage && <a href={repo.homepage} target="_blank"><FontAwesomeIcon icon={faExternalLink}></FontAwesomeIcon></a>}
+                            <a href={repo.html_url} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faCodeBranch}></FontAwesomeIcon></a>
+                            {repo.homepage && <a href={repo.homepage} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faExternalLink}></FontAwesomeIcon></a>}
                         </td>
                     </tr>   
                 ))}
