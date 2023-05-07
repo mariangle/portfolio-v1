@@ -4,11 +4,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSun, faMoon, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { staggerAnim, slideAnim } from "../animation";
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 
 const Header = ({toggleTheme, theme}) => {
   const [isActive, setIsActive] = useState(false);  
+  const { pathname } = useLocation();
+
+
 
   function handleLinkClick() {
     setIsActive(false);
@@ -17,23 +20,25 @@ const Header = ({toggleTheme, theme}) => {
   return (
     <StyledNav variants={slideAnim.down} initial="hidden" animate="show" >
         <Logo><Link to="/"><h1> &lt;<span>Maria</span>/&gt;</h1></Link></Logo>
-        <motion.ul  variants={staggerAnim} className={`${isActive ? "active" : ""}`}>
-            <motion.li variants={slideAnim.down}>
-              <a href="#about" onClick={handleLinkClick}><span>01.</span> ABOUT</a>
-            </motion.li>
-            <motion.li variants={slideAnim.down}>
-                <a href="#projects" onClick={handleLinkClick}><span>02.</span> PROJECTS</a>
-            </motion.li>
-            <motion.li variants={slideAnim.down}>
-                <a href="#contact" onClick={handleLinkClick}><span>03.</span> CONTACT</a>
-            </motion.li>
-            <motion.li variants={slideAnim.down}>
-              <Label className="label">
-                  {theme === "light" ? <FontAwesomeIcon className="icon" icon={faMoon} /> : <FontAwesomeIcon className="icon" icon={faSun} />}
-                  <input onClick={toggleTheme}/>
-              </Label>
-            </motion.li>
-        </motion.ul>
+        { pathname !== "/archive" && (
+                <motion.ul  variants={staggerAnim} className={`${isActive ? "active" : ""}`}>
+                  <motion.li variants={slideAnim.down}>
+                    <a href="#about" onClick={handleLinkClick}><span>01.</span> ABOUT</a>
+                  </motion.li>
+                  <motion.li variants={slideAnim.down}>
+                      <a href="#projects" onClick={handleLinkClick}><span>02.</span> PROJECTS</a>
+                  </motion.li>
+                  <motion.li variants={slideAnim.down}>
+                      <a href="#contact" onClick={handleLinkClick}><span>03.</span> CONTACT</a>
+                  </motion.li>
+                  <motion.li variants={slideAnim.down}>
+                    <Label className="label">
+                        {theme === "light" ? <FontAwesomeIcon className="icon" icon={faMoon} /> : <FontAwesomeIcon className="icon" icon={faSun} />}
+                        <input onClick={toggleTheme}/>
+                    </Label>
+                  </motion.li>
+              </motion.ul>
+        )}
         <FontAwesomeIcon className="burger" icon={isActive ? faTimes : faBars} onClick={() => setIsActive(!isActive)}></FontAwesomeIcon>
     </StyledNav>
   ) 

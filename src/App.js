@@ -16,7 +16,7 @@ function App() {
   }
 
   useEffect(() => {
-    document.title = "Maria";
+    document.title = "Maria Le";
   }, [pathname]);
 
   return (

@@ -7,7 +7,7 @@ import { faCodeBranch, faExternalLink } from "@fortawesome/free-solid-svg-icons"
 
 function formatDate(date) {
     const format = { year: "numeric", month: 'short' };
-    return new Date(date).toLocaleDateString('da-DK', format);
+    return new Date(date).toLocaleDateString('us-US', format);
 }
 
 function formatName(name) {
