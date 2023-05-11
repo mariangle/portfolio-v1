@@ -14,7 +14,6 @@ import { slideAnim } from "../../animation";
 
 const About = () => {
     const [ref, controls] = useScroll();
-    const [ref2, controls2] = useScroll();
     
     return(
     <Div>

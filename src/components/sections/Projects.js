@@ -9,7 +9,6 @@ import { useScroll } from '../../util/useScroll';
 import { Link } from 'react-router-dom';
 
 function Projects() {
-const [ref, controls] = useScroll();
 const [ref2, controls2] = useScroll();
 
   return (

@@ -70,7 +70,7 @@ function Techstack() {
 
 const StyledTechstack = styled(motion.div)`
 width: 100%;
-margin-top: 2rem;
+margin: 3rem 0;
 `
 const Grid = styled(motion.div)`
     width: 100%;

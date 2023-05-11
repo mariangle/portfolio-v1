@@ -1,22 +1,18 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Technologies } from '../styles/styles'
-import { useScroll } from '../util/useScroll';
 import { motion } from "framer-motion"
 import ecommerce from "../assets/videoes/ecommerce.mp4"
 import studiebnb from "../assets/videoes/studiebnb.mp4"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode } from '@fortawesome/fontawesome-free-solid'
-import { staggerAnim } from '../animation';
 
 function Featured() {
-  const [ref, controls] = useScroll();
-  const [ref2, controls2] = useScroll();
 
   return (
     <StyledFeatured>
-        <FeaturedProject animate={controls} ref={ref} variants={staggerAnim}>
+      <FeaturedProject>
             <Image>
                 <Video src={ecommerce} alt="project_video" controls/>
             </Image>
@@ -38,7 +34,7 @@ function Featured() {
               </More>
             </About>
         </FeaturedProject>
-        <FeaturedProject animate={controls2} ref={ref2}>
+        <FeaturedProject>
             <About>
               <Header>
                 <p>FEATURED</p>
@@ -74,7 +70,7 @@ const FeaturedProject = styled(motion.div)`
   display: flex;
   align-items: center;
   transition: all 0.2s ease-in-out;
-  margin-bottom: 5rem;
+  padding: 3rem 0;
   @media (max-width: 850px){
     display: block;
   }
@@ -114,8 +110,7 @@ const Video = styled.video`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
-    border: 5px solid var(--color-bg);
+    border-radius: 10px;
 `
 
 export default Featured;
