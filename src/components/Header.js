@@ -11,15 +11,13 @@ const Header = ({toggleTheme, theme}) => {
   const [isActive, setIsActive] = useState(false);  
   const { pathname } = useLocation();
 
-
-
   function handleLinkClick() {
     setIsActive(false);
   }
   
   return (
     <StyledNav variants={slideAnim.down} initial="hidden" animate="show" >
-        <Logo><Link to="/"><h1> &lt;<span>Maria</span>/&gt;</h1></Link></Logo>
+        <Logo><Link to="/"><h1> &lt;<span>Maria </span>/&gt;</h1></Link></Logo>
         { pathname !== "/archive" && (
                 <motion.ul  variants={staggerAnim} className={`${isActive ? "active" : ""}`}>
                   <motion.li variants={slideAnim.down}>
@@ -37,6 +35,7 @@ const Header = ({toggleTheme, theme}) => {
                         <input onClick={toggleTheme}/>
                     </Label>
                   </motion.li>
+
               </motion.ul>
         )}
         <FontAwesomeIcon className="burger" icon={isActive ? faTimes : faBars} onClick={() => setIsActive(!isActive)}></FontAwesomeIcon>
@@ -79,6 +78,9 @@ const StyledNav = styled(motion.nav)`
     display: none;
     z-index: 9999;
     font-size: 1.2rem;
+  }
+  a span {
+    color: var(--color-main);
   }
   @media (max-width: 600px){
     background-color: var(--color-nav);

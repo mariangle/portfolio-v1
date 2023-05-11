@@ -16,13 +16,12 @@ const HeroSection = () => {
                         <motion.h2 variants={slideAnim.up}>Hi, my name is </motion.h2>
                     </Hide>
                     <Hide>
-                        <motion.h2 variants={slideAnim.up}><span>Maria</span></motion.h2>
+                        <motion.h2 variants={slideAnim.up}><span>Maria Le</span></motion.h2>
                     </Hide>
                 </motion.div>
                 <Hide>
                     <motion.p variants={slideAnim.up}> 
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus mollitia quisquam illo sapiente doloribus repellendus temporibus porro magni, excepturi cum cumque? Commodi ipsum expedita quasi sed atque ullam ea modi ipsa consequuntur!
-                    </motion.p>
+                    I have a strong passion for crafting web-based solutions with a strong emphasis on functionality and user experience. I take pride in transforming ideas into reality by creating practical and visually appealing web applications.</motion.p>
                 </Hide>
                 <ButtonContainer>
                     <Hide>
@@ -44,16 +43,11 @@ p{
   h2{
     font-size: 1.2rem;
     font-weight: lighter;
-    font-family: var(--font-mono);
     margin-bottom: 0rem;
     span {
         font-family: var(--font-sans);
         font-size: 4rem;
-        font-weight: 800;
-        background-image: var(--color-gradient);
-        background-clip: text;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        font-weight: bold;
     }
   }
 `

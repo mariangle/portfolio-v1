@@ -4,8 +4,8 @@ import Theme from './styles/Theme';
 import GlobalStyle from './styles/GlobalStyles';
 import Header from './components/Header';
 import CustomCursor from './components/Cursor';
-import Home from './Home';
-import Archive from './Archive';
+import IndexPage from './pages/IndexPage';
+import ArchivePage from './pages/ArchivePage';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -22,12 +22,12 @@ function App() {
   return (
     <div className="App">
       <Theme theme={theme}>
-      <CustomCursor />
+        <CustomCursor />
         <GlobalStyle />
         <Header toggleTheme={toggleTheme} theme={theme}/>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/archive" element={<Archive />} />
+          <Route path="/" element={<IndexPage />} />
+          <Route path="/archive" element={<ArchivePage />} />
         </Routes>
       </Theme>
     </div>

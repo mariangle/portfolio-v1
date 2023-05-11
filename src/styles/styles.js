@@ -34,7 +34,7 @@ border-radius: 50%;
 width: 0.5rem;
 height: 0.5rem;
 margin-right: 1rem;
-background: ${props => props.theme.mainColor};
+background: var(--color-main);
 `
 
 export const Social = styled(motion.div)`
@@ -43,13 +43,13 @@ align-items: center;
 `
 
 export const Technologies = styled.ul`
-margin-top: 1rem;
 display: flex;
 gap: 0.5rem;
 li{
-  background: ${props => props.theme.backgroundColor};
+  background: var(--color-second);
+  color: var(--color-main);
   padding: 0.3rem 0.5rem;
-  font-size: 0.8rem;
-  border-radius: 10px;
+  font-size: 0.7rem;
+  border-radius: 20px;
 }
 ` 

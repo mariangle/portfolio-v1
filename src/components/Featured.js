@@ -1,30 +1,66 @@
 import React from 'react'
 import styled from 'styled-components'
 import { Technologies } from '../styles/styles'
-import { useScroll } from './util/useScroll';
-import {motion} from "framer-motion"
+import { useScroll } from '../util/useScroll';
+import { motion } from "framer-motion"
+import ecommerce from "../assets/videoes/ecommerce.mp4"
+import studiebnb from "../assets/videoes/studiebnb.mp4"
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCode } from '@fortawesome/fontawesome-free-solid'
+import { staggerAnim } from '../animation';
 
 function Featured() {
   const [ref, controls] = useScroll();
+  const [ref2, controls2] = useScroll();
 
   return (
-    <StyledFeatured animate={controls} ref={ref}>
-        <Project>
+    <StyledFeatured>
+        <FeaturedProject animate={controls} ref={ref} variants={staggerAnim}>
+            <Image>
+                <Video src={ecommerce} alt="project_video" controls/>
+            </Image>
             <About>
-                <p><span>Featured</span></p>
+              <Header>
+                <p>Featured</p>
                 <a href="https://github.com/mariangle/ecommerce-app-ms-sql-net-react" target="_blank" rel="noopener noreferrer"><h3>Sneaker Ecommerce</h3></a>
-                <p>A full-stack e-commerce app for buying sneakers</p>
+              </Header>
+              <AboutText>
+                <p>This e-commerce application combines my backend knowledge from school with my self-taught front-end skills. It provides customers with the ability to log in, view, and purchase sneakers, while administrators have access to features for managing products, orders, and users. </p>
+              </AboutText>
+              <More>
                 <Technologies>
-                  <li>react</li>
-                  <li>sql</li>
-                  <li>.net framework</li>
+                  <li>React</li>
+                  <li>SQL</li>
+                  <li>.NET WEB API</li>
                 </Technologies>
+                <a href="https://github.com/mariangle/ecommerce-app-ms-sql-net-react" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faCode}></FontAwesomeIcon></a>
+              </More>
+            </About>
+        </FeaturedProject>
+        <FeaturedProject animate={controls2} ref={ref2}>
+            <About>
+              <Header>
+                <p>FEATURED</p>
+                <a href="https://github.com/mariangle/mern-booking-app" target="_blank" rel="noopener noreferrer"><h3>StudieBnB</h3></a>
+              </Header>
+              <AboutText>
+                <p>StudieBnb is a redesigned Airbnb clone. It offers users the ability to log in, book listings, and manage their own listings. The project was developed to explore the MERN stack and writing server-side code in JavaScript.</p>
+              </AboutText>
+              <More>
+                <Technologies>
+                  <li>MongoDB</li>
+                  <li>ExpressJS</li>
+                  <li>React</li>
+                  <li>NodeJS</li>
+                </Technologies>
+                <a href="https://github.com/mariangle/ecommerce-app-ms-sql-net-react" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faCode}></FontAwesomeIcon></a>
+              </More>
             </About>
             <Image>
-                <img alt="" />
+                <Video src={studiebnb} alt="project_video" controls/>
             </Image>
-        </Project>
+        </FeaturedProject>
     </StyledFeatured>
   )
 }
@@ -34,47 +70,52 @@ margin-bottom: 2rem;
 transition: 0.1s all ease-in-out;
 `
 
-const Project = styled.div`
+const FeaturedProject = styled(motion.div)`
   display: flex;
   align-items: center;
-  background: var(--color-bg-2);
-  padding: 2rem;
-  border-radius: 10px;
   transition: all 0.2s ease-in-out;
+  margin-bottom: 5rem;
   @media (max-width: 850px){
     display: block;
   }
-  &:hover{
-  transform: translateY(-5px);
+`
+
+const Header = styled.div`
+padding: 1rem;
+p{
+  font-weight: bold;
+  font-size: 0.7rem;
+  color: var(--color-main)
 }
+`
+const AboutText = styled.div`
+  padding: 2rem;
+  background: var(--color-bg-2);
+`
+const More = styled.div`
+padding: 1rem;
+display: flex;
+gap: 0.75rem;
+align-items: center;
 `
 
 const About = styled.div`
   flex: 1;
-  p{
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    span{
-      font-weight: bolder;
-      font-family: var(--font-sans);
-      font-weight: 800;
-      background-image: var(--color-gradient);
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  }
 `
 
 const Image = styled.div`
   position: relative;
   flex: 1;
-  img {
+  display: flex;
+  align-items: center;
+`
+
+const Video = styled.video`
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
+    border-radius: 20px;
+    border: 5px solid var(--color-bg);
 `
 
 export default Featured;

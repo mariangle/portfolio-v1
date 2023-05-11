@@ -1,35 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-// components
-// animations
+
 import {motion} from "framer-motion";
-import { projectState } from '../../projectState';
-import Project from '../Project';
 import Featured from '../Featured';
 import { slideAnim } from "../../animation"
 
-import { useScroll } from '../util/useScroll';
+import { useScroll } from '../../util/useScroll';
 import { Link } from 'react-router-dom';
 
 function Projects() {
-const projects = projectState();
 const [ref, controls] = useScroll();
+const [ref2, controls2] = useScroll();
 
   return (
     <StyledProjects id="projects">
-      <FeaturedContainer animate={controls} ref={ref} variants={slideAnim.up}>
-        <h2><span>02.</span> Projects</h2>
+      <FeaturedContainer>
+        <h2><span>02.</span> PROJECTS</h2>
         <Featured/>
-      </FeaturedContainer>
-      <GridContainer>
-        <h3><span>Other</span> featured Projects</h3>
-        <Link to="/archive"><span>view archive</span></Link>
-        <ProjectGrid>
-          {projects.map((project, index) => (
-            <Project project={project} key={index}/> 
-          ))}
-        </ProjectGrid>
-      </GridContainer>
+      </FeaturedContainer >
+      <Archive animate={controls2} ref={ref2} variants={slideAnim.up}>
+        <motion.div><Link to="/archive" variants={slideAnim.up}><h3>ALL PROJECTS</h3></Link></motion.div>
+        <motion.p variants={slideAnim.up}>I have an <Link to="/archive">archive</Link> of all my repositories to track my progress. In a few months, I've made notable progress. From HTML, CSS, and JavaScript to React and diverse styling libraries, I've expanded my skills to develop full stack applications using <span>various frameworks and libraries</span>. Constantly pushing myself, I'm  <span>dedicated to progress and growth</span> as a developer.</motion.p>
+        </Archive>
     </StyledProjects>
   )
 }
@@ -43,23 +35,22 @@ const StyledProjects = styled(motion.div)`
     flex-direction: column;
 `
 
-const ProjectGrid = styled(motion.div)`
-  margin-top: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 1rem;
-
-`
-
 const FeaturedContainer = styled(motion.div)`
 display: flex;
 align-items: center;
 flex-direction: column;
 `
-const GridContainer = styled(motion.div)`
+const Archive = styled(motion.div)`
 display: flex;
 align-items: center;
 flex-direction: column;
+p{
+  margin-top: 1rem;
+}
+p a{
+  text-decoration: underline;
+  color: var(--color-main)
+}
 `
 
 

@@ -8,7 +8,7 @@ import { Technologies } from '../styles/styles';
 
 import { staggerAnim } from "../animation"
 
-import { useScroll } from './util/useScroll';
+import { useScroll } from '../util/useScroll';
 
 function Project({project}) {
   const [ref, controls] = useScroll();

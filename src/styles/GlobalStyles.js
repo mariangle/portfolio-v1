@@ -40,15 +40,16 @@ const GlobalStyle = createGlobalStyle`
 
   button {
     letter-spacing: 1px;
-    color: white;
+    color: var(--color-main);
     cursor: pointer;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 1.5rem;
     border: none;
-    background: var(--color-main);
+    border-radius: 20px;
+    background: var(--color-second);
     transition: all 0.2s ease-in-out;
-    border-radius: 10px;
     &:hover {
-      background: var(--color-second);
+      background: var(--color-main);
+      color: var(--color-second)
     }
   }
 
@@ -66,13 +67,17 @@ const GlobalStyle = createGlobalStyle`
     line-height: 150%;
   }
 
+  p span {
+    color: var(--color-header);
+  }
+
   h1 {
     font-size: 4rem;
   }
 
   h2{
     font-weight: bolder;
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: var(--color-header);    
     margin-bottom: 2rem;
     span{
@@ -91,26 +96,21 @@ const GlobalStyle = createGlobalStyle`
 
   h4 {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1rem;
   }
   li{
     list-style: none;
   }
-
-  span {
-    color: var(--color-main);
-  }
-
   *::-webkit-scrollbar {
     width: 8px;
   }
 
   *::-webkit-scrollbar-track {
-    background-color: var(--color-main);
+    background-color: var(--color-bg-2);
   }
 
   *::-webkit-scrollbar-thumb {
-    background: var(--color-second);
+    background: var(--color-header);
     border: transparent;
     border-radius: 8px;
   }

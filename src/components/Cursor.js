@@ -33,7 +33,6 @@ const Cursor = styled.div`
   z-index: 9999;
   transition: transform 0.2s ease-out;
   transform: translate(-50%, -50%);
-  // mix-blend-mode: difference;
 `;
 
 export default CustomCursor;

@@ -6,27 +6,27 @@ function AboutMe() {
 
   return (
     <StyledAboutMe>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit a facilis iste ab odit tempora ut sint commodi facere accusamus.</p> <br />
+      <p>Studying back-end development helped me realize my natural flair towards UI/UX design. This led me to explore <span>self-taught front-end development</span> and work towards my goal of becoming a <span>full-stack developer</span>. I aim to combine my skills in both areas and continue to learn and experiment with new technologies. </p> <br />
 
-    <li>Recent technologies I've used:</li>
-      <Technologies>
-        <Social>
-          <Circle/>
-          <li>React</li>
-        </Social>
-        <Social>
-          <Circle/>
-          <li>Javascript</li>
-        </Social>
-        <Social>
-          <Circle/>
-          <li>C#</li>
-        </Social>
-        <Social>
-          <Circle/>
-          <li>SQL</li>
-        </Social>
-      </Technologies>
+      <li>Recent technologies I've used:</li>
+        <Technologies>
+          <Social>
+            <Circle/>
+            <li>React</li>
+          </Social>
+          <Social>
+            <Circle/>
+            <li>Javascript</li>
+          </Social>
+          <Social>
+            <Circle/>
+            <li>C#</li>
+          </Social>
+          <Social>
+            <Circle/>
+            <li>SQL</li>
+          </Social>
+        </Technologies>
     </StyledAboutMe>  
 )}
 
@@ -38,7 +38,7 @@ flex: 3;
 margin-right: 2rem;
 p span{
   font-family: var(--font-sans);
-  font-weight: 600;
+  color: var(--color-header);
 }
 `
 

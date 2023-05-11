@@ -4,8 +4,11 @@ import {motion} from "framer-motion"
 import { Container, Div, Hide} from "../../styles/styles";
 import { slideAnim, staggerAnim } from "../../animation"
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
-import { useScroll } from '../util/useScroll';
+import { useScroll } from '../../util/useScroll';
+import { faPhone } from '@fortawesome/fontawesome-free-solid';
 
 
 const Contact = () => { 
@@ -16,17 +19,29 @@ const Contact = () => {
       <ContactStyle animate={controls} ref={ref} variants={staggerAnim} id="contact">
         <div>
           <Hide>
-            <motion.h2 variants={slideAnim.up}><span>03.</span> Contact</motion.h2>
+            <motion.h2 variants={slideAnim.up}><span>03.</span> CONTACT</motion.h2>
           </Hide>
         </div>
-        <ContactForm>
-          <motion.input type="text" placeholder="Your Name" variants={slideAnim.up}/>
-          <motion.input type="text" placeholder="Your Email" variants={slideAnim.up}/>
-          <motion.textarea type="text" placeholder="Your Message" rows="6" variants={slideAnim.up}/>
+        <ContactInfo>
           <Hide>
-            <motion.button variants={staggerAnim}>Submit</motion.button>
+            <Info>
+            <IconContainer variants={slideAnim.up}>
+                <FontAwesomeIcon icon={faEnvelope}></FontAwesomeIcon>
+            </IconContainer>
+            <motion.p variants={slideAnim.up}>marianguyenle17@gmail.com</motion.p>
+            </Info>
           </Hide>
-        </ContactForm>
+          <Hide>
+            <Info>
+              <IconContainer variants={slideAnim.up}>
+                  <FontAwesomeIcon icon={faPhone  }></FontAwesomeIcon>
+              </IconContainer>
+              <motion.p variants={slideAnim.up}>+45 31314341</motion.p>
+            </Info>
+          </Hide>
+          <Hide>
+          </Hide>
+        </ContactInfo>
         </ContactStyle>
     </Div>
   )
@@ -34,7 +49,7 @@ const Contact = () => {
 
 const ContactStyle = styled(Container)`
 flex-direction: column;
-align-items: center;
+align-items: flex-start;
 justify-content: center;
 @media (max-width: 650px){
   padding: 2rem;
@@ -43,16 +58,34 @@ justify-content: center;
   }
 }
 `
-const ContactForm = styled.div`
+const ContactInfo = styled.div`
 display: flex;
 flex-direction: column;
-align-items: center;
+align-items: flex-start;
 width: 100%;
 max-width: 35rem;
 button{
   margin-top: 1rem;
 }
 `
+const IconContainer = styled(motion.div)`
+background: var(--color-bg);
+height: 3rem;
+width: 3rem;
+display: flex;
+align-items: center;
+justify-content: center;
+border-radius: 50%;
+`
+
+const Info = styled(motion.div)`
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 1rem;
+margin-bottom: 2rem;
+`
+
 
 
 export default Contact;

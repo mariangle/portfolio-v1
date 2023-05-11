@@ -1,23 +1,11 @@
 import { useState, useEffect } from "react";
 import React from 'react'
-import { Container } from "./styles/styles";
+import { Container } from "../styles/styles";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCodeBranch, faExternalLink } from "@fortawesome/free-solid-svg-icons";
-
-function formatDate(date) {
-    const format = { year: "numeric", month: 'short' };
-    return new Date(date).toLocaleDateString('us-US', format);
-}
-
-function formatName(name) {
-    const formattedName = name
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" "); 
-    
-    return formattedName;
-}
+import { Technologies } from "../styles/styles";
+import { formatName, formatDate } from "../util/useUtil"
 
 function Archive() {
     const [repos, setRepos] = useState([]);
@@ -27,36 +15,23 @@ function Archive() {
           const response = await fetch("https://api.github.com/users/mariangle/repos");
           const repositories = await response.json();
       
-          const languages = await Promise.all(repositories.map(async (repo) => {
-            const languageResponse = await fetch(repo.languages_url);
-            const languageData = await languageResponse.json();
-            return Object.keys(languageData);
-          }));
-      
-          const reposWithLanguages = repositories.map((repo, index) => {
-            return {
-              ...repo,
-              languages: languages[index]
-            };
-          });
-      
-          setRepos(reposWithLanguages);
+          setRepos(repositories);
         };
       
         fetchRepositories();
       }, []);
 
-
   return (
     <StyledArchive>
-        <h2>Archive</h2>
+        <div>
+            <h2>Archive</h2>
+        </div>
         <table>
             <thead>
                 <tr>
-                    <th>Created at</th>
+                    <th>Created</th>
                     <th>Name</th>
-                    <th>Languages</th>
-                    <th>Teck stack</th>
+                    <th>Built with</th>
                     <th>Link</th>
                 </tr>
             </thead>
@@ -68,14 +43,11 @@ function Archive() {
                         <td>{formatDate(repo.created_at)}</td>         
                         <td>{formatName(repo.name)}</td>
                         <td>
-                            {repo.languages?.map((language, index) => (
-                                <span key={index}>{language}</span>
-                            ))}
-                        </td>
-                        <td>
+                            <Technologies>
                             {repo.topics?.map((language, index) => (
-                                <span key={index}>{language}</span>
+                                <li key={index}>{language}</li>
                             ))}
+                            </Technologies>
                         </td>
                         <td>
                             <a href={repo.html_url} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faCodeBranch}></FontAwesomeIcon></a>
@@ -86,23 +58,28 @@ function Archive() {
             </tbody>
         </table>
     </StyledArchive>
-
   )
 }
 
 const StyledArchive = styled(Container)`
-max-width: 1600px;
+max-width: 1200px;
 flex-direction: column;
+div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
 table{
     width: 100%;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 th, td{
     padding: 0.5rem;
 }
 th{
     text-align: left;
-    color: var(--color-text);
+    color: var(--color-header);
 }
 td{
     span, a{
