@@ -7,7 +7,6 @@ background: ${props => props.theme.secondBackground};
 
 
 export const Container = styled(motion.div)`
-  z-index: 2;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -18,7 +17,6 @@ export const Container = styled(motion.div)`
 `;
 
 export const Description = styled(motion.div)`
-z-index: 2;
 display: flex;
 flex-direction: column;
 align-items: flex-start;

@@ -17,7 +17,6 @@ const GlobalStyle = createGlobalStyle`
   }
 
   * {
-  overflow-x:hidden;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,9 +24,8 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     scroll-behavior: smooth;  
-    @media (max-width: 800px) {
-      font-size: 80%;
-    }
+    overflow-x:hidden;
+
   }
 
   body {

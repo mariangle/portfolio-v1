@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Theme from './styles/Theme';
 import GlobalStyle from './styles/GlobalStyles';
-import Header from './components/Header';
+import Header from './components/Nav';
 import CustomCursor from './components/Cursor';
 import IndexPage from './pages/IndexPage';
 import ArchivePage from './pages/ArchivePage';
