@@ -77,7 +77,7 @@ const FeaturedProject = styled(motion.div)`
 `
 
 const Header = styled.div`
-padding: 1rem;
+padding: 2rem 2rem 1rem;
 p{
   font-weight: bold;
   font-size: 0.7rem;

@@ -9,7 +9,7 @@ import Wave from "../../assets/img/Wave";
 
 const HeroSection = () => {
     return(
-        <StyledContainer variants={staggerAnim} initial="hidden" animate="show">
+        <StyledHero variants={staggerAnim} initial="hidden" animate="show">
             <Description>
                 <motion.div>
                     <Hide>
@@ -21,22 +21,23 @@ const HeroSection = () => {
                 </motion.div>
                 <Hide>
                     <motion.p variants={slideAnim.up}> 
-                    I have a strong passion for crafting web-based solutions with a strong emphasis on functionality and user experience. I take pride in transforming ideas into reality by creating practical and visually appealing web applications.</motion.p>
+                    I build web-based solutions that prioritize functionality and user experience. I take pride in transforming ideas into reality by creating practical and visually appealing web applications.</motion.p>
                 </Hide>
                 <ButtonContainer>
                     <Hide>
-                        <Link to="https://github.com/mariangle" target="_blank">
+                        <a href="https://github.com/mariangle" target="_blank">
                             <motion.button variants={slideAnim.up}>Github</motion.button>
-                        </Link>
+                        </a>
                     </Hide>
                 </ButtonContainer>
             </Description>
             <Wave />
-        </StyledContainer>
+        </StyledHero>
     )
 }
 
-const StyledContainer = styled(Container)`
+const StyledHero = styled(Container)`
+min-height: 100vh;
 p{
     padding: 0 0 1.5rem;
 }
@@ -45,9 +46,9 @@ p{
     font-weight: lighter;
     margin-bottom: 0rem;
     span {
-        font-family: var(--font-sans);
+        font-family: 'Poppins', sans-serif;
         font-size: 4rem;
-        font-weight: bold;
+        font-weight: 800;
     }
   }
 `

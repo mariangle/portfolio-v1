@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
     --color-second: ${props => props.theme.secondColor};
     --color-gradient: ${props => props.theme.gradientColor};
     --font-mono: "Roboto Mono", sans-serif;
-    --font-sans: "Poppins", sans-serif;
+    --font-sans: 'Inter', sans-serif;
   }
 
   * {

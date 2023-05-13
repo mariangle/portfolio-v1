@@ -6,6 +6,7 @@ import Header from './components/Nav';
 import CustomCursor from './components/Cursor';
 import IndexPage from './pages/IndexPage';
 import ArchivePage from './pages/ArchivePage';
+import Footer from './components/Footer';
 
 function App() {
   const [theme, setTheme] = useState('dark');
@@ -28,6 +29,7 @@ function App() {
           <Route path="/" element={<IndexPage />} />
           <Route path="/archive" element={<ArchivePage />} />
         </Routes>
+        <Footer/>
       </Theme>
     </div>
   );

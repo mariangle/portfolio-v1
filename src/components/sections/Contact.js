@@ -48,6 +48,7 @@ const Contact = () => {
 }
 
 const ContactStyle = styled(Container)`
+min-height: 90vh;
 flex-direction: column;
 align-items: flex-start;
 justify-content: center;

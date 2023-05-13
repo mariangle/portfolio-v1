@@ -1,12 +1,15 @@
 import React from 'react'
 import {Description, Social, Circle} from "../styles/styles";
 import styled from 'styled-components';
+import { useScroll } from "../util/useScroll";
+import { motion } from "framer-motion";
+import { slideAnim } from "../animation";
 
 function AboutMe() {
 
   return (
     <StyledAboutMe>
-      <p>Studying back-end development helped me realize my natural flair towards UI/UX design. This led me to explore <span>self-taught front-end development</span> and work towards my goal of becoming a <span>full-stack developer</span>. I aim to combine my skills in both areas and continue to learn and experiment with new technologies. </p> <br />
+      <motion.p >Studying back-end development helped me realize my natural flair towards UI/UX design. This led me to explore <span>self-taught front-end development</span> and work towards my goal of becoming a <span>full-stack developer</span>. I aim to combine my skills in both areas and continue to learn and experiment with new technologies. </motion.p> <br />
 
       <li>Recent technologies I've used:</li>
         <Technologies>

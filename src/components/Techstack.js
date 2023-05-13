@@ -12,11 +12,34 @@ function Techstack() {
     const [ref, controls] = useScroll();
 
   return (
-    <StyledTechstack animate={controls} ref={ref} variants={slideAnim.left}>
-        <Header>
-            <h2>Technologies</h2>
-        </Header>
+    <StyledTechstack animate={controls} ref={ref} variants={slideAnim.right}>
         <Grid>
+            <StackContainer>
+                <IconContainer>
+                    <FontAwesomeIcon icon={faCode}></FontAwesomeIcon>
+                </IconContainer>
+                <ul>
+                    <li><h4>BACK END</h4></li>
+                    <li>C#</li>
+                    <li>NodeJS</li>
+                    <li>ExpressJS</li>
+                    <li>TypeScript</li>
+                    <li>Prisma</li>
+                </ul>
+            </StackContainer>
+            <StackContainer>
+                <IconContainer>
+                    <FontAwesomeIcon icon={faLaptopCode}></FontAwesomeIcon>
+                </IconContainer>
+                <ul>
+                    <li><h4>FRONT END</h4></li>
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                    <li>React/Redux</li>
+                    <li>NextJS</li>
+                </ul>
+            </StackContainer>
             <StackContainer>
                 <IconContainer>
                     <FontAwesomeIcon icon={faDatabase}></FontAwesomeIcon>
@@ -29,34 +52,10 @@ function Techstack() {
             </StackContainer>
             <StackContainer>
                 <IconContainer>
-                    <FontAwesomeIcon icon={faCode}></FontAwesomeIcon>
-                </IconContainer>
-                <ul>
-                    <li><h4>BACK END</h4></li>
-                    <li>C#</li>
-                    <li>Node</li>
-                    <li>Express</li>
-                    <li>Javascript</li>
-                </ul>
-            </StackContainer>
-            <StackContainer>
-                <IconContainer>
-                    <FontAwesomeIcon icon={faLaptopCode}></FontAwesomeIcon>
-                </IconContainer>
-                <ul>
-                    <li><h4>FRONT END</h4></li>
-                    <li>HTML</li>
-                    <li>React</li>
-                    <li>Next</li>
-                </ul>
-            </StackContainer>
-            <StackContainer>
-                <IconContainer>
                     <FontAwesomeIcon icon={faRuler}></FontAwesomeIcon>
                 </IconContainer>
                 <ul>
                     <li><h4>STYLING</h4></li>
-                    <li>CSS</li>
                     <li>SCSS</li>
                     <li>Tailwind CSS</li>
                     <li>Styled Components</li>
@@ -69,39 +68,40 @@ function Techstack() {
 }
 
 const StyledTechstack = styled(motion.div)`
+padding: 1rem;
 width: 100%;
-margin: 3rem 0;
+margin: auto 0;
 `
 const Grid = styled(motion.div)`
     width: 100%;
     display: grid;
     gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     text-align: center;
 `
-
 const StackContainer = styled(motion.div)`
     display: flex;
     align-items: center;
     flex-direction: column;
+    background: var(--color-bg);
+    padding: 2rem 0;
+    border-radius: 20px;
     h4{
-        margin: 0.5rem 0;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+    }
+    li{
+        font-size: 0.8rem;
+        margin-top: 0.5rem;
     }
 `
-
-const Header = styled(motion.div)`
-margin-top: 4rem;
-width: 100%;
-text-align: center;
-`
-
-
 const IconContainer = styled(motion.div)`
-    background: var(--color-bg);
+    background: var(--color-second);
+    color: var(--color-main);
     padding: 1rem;
     border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
+    height: 2rem;
+    width: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;

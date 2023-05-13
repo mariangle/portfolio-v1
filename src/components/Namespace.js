@@ -1,12 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
 import { motion } from "framer-motion"
-
+import { useScroll } from "../util/useScroll";
+import { slideAnim } from "../animation";
 function Namespace() {
 
+    const [ref, controls] = useScroll();
 
   return (
-    <StyledNamespace>
+    <>
+     <StyledNamespace animate={controls} ref={ref} id="about" variants={slideAnim.right}>
         <Window>
             <div className="circle"></div>
             <div className="circle2 circle"></div>
@@ -27,6 +30,8 @@ function Namespace() {
             </Class>
         &#125;
     </StyledNamespace>  
+    </>
+
 )}
 
 const Class = styled.div`
