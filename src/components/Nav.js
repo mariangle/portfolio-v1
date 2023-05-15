@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faBars, faTimes, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { staggerAnim, slideAnim } from "../animation";
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+import { faSun } from '@fortawesome/free-regular-svg-icons';
 
 
 const Nav = ( {toggleTheme, theme} ) => {
   const [isMenuActive, toggleMenu] = useState(false);  
   const { pathname } = useLocation();
 
-
-  
   return (
     <Container>
       <StyledNav variants={slideAnim.down} initial="hidden" animate="show" >
@@ -33,7 +32,7 @@ const Nav = ( {toggleTheme, theme} ) => {
               </NavLink>
               <NavLink variants={slideAnim.down}>
                 <Label className="label">
-                    {theme === "light" ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faCircle} />}
+                    {theme === "light" ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}
                     <input onClick={toggleTheme}/>
                 </Label>
               </NavLink>
@@ -51,16 +50,15 @@ const Nav = ( {toggleTheme, theme} ) => {
 const Container = styled(motion.div)`
   z-index: 1;
   position: fixed;
-  padding: 1rem 2rem;
   left: 0;
   right: 0;
   background: linear-gradient(to bottom, var(--color-border) 0%, rgba(0,0,0,0) 100%);
 `
 
-
 const StyledNav = styled(motion.nav)`
   max-width: 1080px;
   margin: auto;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
 `
@@ -73,7 +71,8 @@ const NavLinks = styled(motion.ul)`
   border: 2px solid var(--color-border);
   padding: 1rem 2rem;
   @media (max-width: 700px){
-    display: none;
+    transform: translateX(100%) !important;
+    transition: 0.3s ease-in-out;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -84,7 +83,7 @@ const NavLinks = styled(motion.ul)`
     height: 100%;
   }
   &.active{
-    display: flex;
+    transform: translateX(0%) !important;
   }
 `
 

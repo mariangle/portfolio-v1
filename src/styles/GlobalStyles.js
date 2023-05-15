@@ -62,7 +62,6 @@ const GlobalStyle = createGlobalStyle`
 
   p {
     color: var(--color-text);
-    font-size: 1rem;
     line-height: 150%;
   }
 
@@ -128,6 +127,41 @@ const GlobalStyle = createGlobalStyle`
 
   input::placeholder,  textarea::placeholder {
   color: var(--color-text);
+  }
+
+  table{
+    width: 100%;
+    font-size: 0.8rem;
+  }
+  th, td{
+      padding: 0.5rem;
+  }
+  th{
+      text-align: left;
+      color: var(--color-header);
+  }
+  td{
+      span, a{
+          margin-right: 1rem;
+          color: var(--color-header);
+      }
+  }
+  td:first-child{
+      color: var(--color-text);
+  }
+  @media (max-width: 650px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+  tr{
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--color-bg-2);
+  }
 }
 `;
 
