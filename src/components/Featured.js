@@ -2,82 +2,51 @@ import React from 'react'
 import styled from 'styled-components'
 import { Technologies } from '../styles/styles'
 import { motion } from "framer-motion"
-import ecommerce from "../assets/videoes/ecommerce.mp4"
-import studiebnb from "../assets/videoes/studiebnb.mp4"
+import { useScroll } from '../util/useScroll';
+import { slideAnim } from "../animation"
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCode } from '@fortawesome/fontawesome-free-solid'
 
-function Featured() {
+function Featured({title, video, text, link, technologies}) {
+  const [ref, controls] = useScroll();
 
   return (
-    <StyledFeatured>
-      <FeaturedProject>
-            <Image>
-                <Video src={ecommerce} alt="project_video" controls/>
-            </Image>
-            <About>
-              <Header>
-                <p>Featured</p>
-                <a href="https://github.com/mariangle/ecommerce-app-ms-sql-net-react" target="_blank" rel="noopener noreferrer"><h3>Sneaker Ecommerce</h3></a>
-              </Header>
-              <AboutText>
-                <p>This e-commerce application combines my backend knowledge from school with my self-taught front-end skills. It provides customers with the ability to log in, view, and purchase sneakers, while administrators have access to features for managing products, orders, and users. </p>
-              </AboutText>
-              <More>
-                <Technologies>
-                  <li>React</li>
-                  <li>SQL</li>
-                  <li>.NET WEB API</li>
-                </Technologies>
-                <a href="https://github.com/mariangle/ecommerce-app-ms-sql-net-react" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faCode}></FontAwesomeIcon></a>
-              </More>
-            </About>
-        </FeaturedProject>
-        <FeaturedProject>
-            <About>
-              <Header>
-                <p>FEATURED</p>
-                <a href="https://github.com/mariangle/mern-booking-app" target="_blank" rel="noopener noreferrer"><h3>StudieBnB</h3></a>
-              </Header>
-              <AboutText>
-                <p>StudieBnb is a redesigned Airbnb clone. It offers users the ability to log in, book listings, and manage their own listings. The project was developed to explore the MERN stack and writing server-side code in JavaScript.</p>
-              </AboutText>
-              <More>
-                <Technologies>
-                  <li>MongoDB</li>
-                  <li>ExpressJS</li>
-                  <li>React</li>
-                  <li>NodeJS</li>
-                </Technologies>
-                <a href="https://github.com/mariangle/ecommerce-app-ms-sql-net-react" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faCode}></FontAwesomeIcon></a>
-              </More>
-            </About>
-            <Image>
-                <Video src={studiebnb} alt="project_video" controls/>
-            </Image>
-        </FeaturedProject>
-    </StyledFeatured>
+      <FeaturedProject animate={controls} ref={ref} variants={slideAnim.up}>
+         <Image>
+             <Video src={video} alt="project_video" controls/>
+         </Image>
+         <About>
+           <Header>
+             <p>Featured</p>
+             <a href={link} target="_blank" rel="noreferrer"><h3>{title}</h3></a>
+           </Header>
+           <AboutText>
+             <p>{text}</p>
+           </AboutText>
+           <More>
+             <Technologies>
+             {technologies?.map((technology) => (
+               <li key={technology}>{technology}</li>
+             ))}
+             </Technologies>
+             <a href={link} target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faCode}></FontAwesomeIcon></a>
+           </More>
+         </About>
+      </FeaturedProject>
   )
 }
 
-const StyledFeatured = styled(motion.div)`
-margin-bottom: 2rem;
-transition: 0.1s all ease-in-out;
-`
-
 const FeaturedProject = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  transition: all 0.2s ease-in-out;
-  padding: 3rem 0;
-  @media (max-width: 850px){
-    display: block;
+  margin-bottom: 4rem;
+  @media (min-width: 850px) {
+    display: flex;
   }
-`
+`;
 
 const Header = styled.div`
-padding: 2rem 2rem 1rem;
+padding: 1rem 2rem;
 p{
   font-weight: bold;
   font-size: 0.7rem;
