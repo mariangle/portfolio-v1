@@ -1,9 +1,7 @@
 import React from 'react'
 import {Description, Social, Circle} from "../styles/styles";
 import styled from 'styled-components';
-import { useScroll } from "../util/useScroll";
 import { motion } from "framer-motion";
-import { slideAnim } from "../animation";
 
 function AboutMe() {
 

@@ -1,11 +1,10 @@
 import React from 'react'
 
-import Hero from "../components/sections/Hero";
-import About from "../components/sections/About";
-import Projects from "../components/sections/Projects";
-import Technologies from '../components/sections/Technologies';
-import Archive from '../components/sections/Archive';
-import Contact from "../components/sections/Contact";
+import Hero from "../sections/Hero"
+import About from "../sections/About";
+import Projects from "../sections/Projects";
+import Technologies from '../sections/Technologies';
+import Contact from "../sections/Contact";
 
 function Home() {
   return (
@@ -14,7 +13,6 @@ function Home() {
         <About/>
         <Technologies/>
         <Projects />
-        <Archive />
         <Contact />
     </>
   )

@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCodeBranch, faExternalLink } from "@fortawesome/free-solid-svg-icons";
 import { Technologies } from "../styles/styles";
-import { formatName, formatDate } from "../util/useUtil"
+import { formatDate } from "../util/useUtil"
 
 function Archive() {
     const [repos, setRepos] = useState([]);
@@ -41,7 +41,7 @@ function Archive() {
                 .map((repo, index) => (
                     <tr key={index}>   
                         <td>{formatDate(repo.created_at)}</td>         
-                        <td>{formatName(repo.name)}</td>
+                        <td>{repo.name}</td>
                         <td>
                             <Technologies>
                             {repo.topics?.map((language, index) => (
@@ -68,28 +68,6 @@ div{
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 2rem;
-}
-table{
-    width: 100%;
-    font-size: 0.8rem;
-}
-th, td{
-    padding: 0.5rem;
-}
-th{
-    text-align: left;
-    color: var(--color-header);
-}
-td{
-    span, a{
-        margin-right: 1rem;
-        color: var(--color-header);
-    }
-}
-td:first-child{
-    font-family: var(--font-mono);
-    color: var(--color-main);
 }
 `
 
