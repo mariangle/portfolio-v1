@@ -12,10 +12,14 @@ const Nav = ( {toggleTheme, theme} ) => {
   const [isMenuActive, toggleMenu] = useState(false);  
   const { pathname } = useLocation();
 
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   return (
     <Container>
       <StyledNav variants={slideAnim.down} initial="hidden" animate="show" >
-          <Logo>
+          <Logo onClick={scrollTop}>
             <Link to="/"><h1> &lt;<span>Maria </span>/&gt;</h1></Link>
           </Logo>
           { pathname === "/" && (
@@ -52,7 +56,7 @@ const Container = styled(motion.div)`
   position: fixed;
   left: 0;
   right: 0;
-  background: linear-gradient(to bottom, var(--color-border) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, var(--color-bg) 0%, rgba(0,0,0,0) 100%);
 `
 
 const StyledNav = styled(motion.nav)`

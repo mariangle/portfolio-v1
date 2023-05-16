@@ -15,7 +15,7 @@ const Archive = () => {
         <Link to="/archive"><h3>ALL PROJECTS</h3></Link>
       </motion.div>
       <Link to="/archive"><p>View Archive</p></Link>
-       <p>I'm consistently striving to improve my skills, whether it's by writing cleaner code, refining project organization, or exploring new technologies. As I look back at my previous projects, I often find areas that I believe could be improved, driven by my ongoing commitment to growth. </p>
+       <p>Looking back at my old projects, I often notice areas for improvement because I have grown and learned since then. Either way, I choose to keep them as a way to track my progress.</p>
     </StyledArchive>
   )
 }

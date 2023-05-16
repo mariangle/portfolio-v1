@@ -23,6 +23,7 @@ const CustomCursor = () => {
 };
 
 const Cursor = styled.div`
+  @media (min-width: 850px) {
   position: fixed;
   width: 30px;
   height: 30px;
@@ -32,7 +33,8 @@ const Cursor = styled.div`
   pointer-events: none;
   z-index: 9999;
   transition: transform 0.2s ease-out;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
+  }
 `;
 
 export default CustomCursor;

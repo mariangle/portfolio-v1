@@ -69,12 +69,11 @@ const Technologies = () => {
 }
 
 const StyledTechnologies = styled(Container)`
-  min-height: 60vh;
   flex-direction:  column;
 `
 
 const Header = styled.h3`
-margin-bottom: 2rem;
+margin-bottom: 4rem;
 `
 
 const Grid = styled(motion.div)`

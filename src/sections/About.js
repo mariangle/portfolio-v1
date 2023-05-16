@@ -34,9 +34,6 @@ const StyledAbout = styled(Container)`
     min-height: 50vh;
     flex-direction: column;
     align-items: flex-start;
-    @media (max-width: 850px){
-        padding: 5rem 2rem;
-    }
 `
 const AboutContainer = styled(motion.div)`
     display: flex;

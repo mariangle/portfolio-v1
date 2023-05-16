@@ -7,9 +7,10 @@ function AboutMe() {
 
   return (
     <StyledAboutMe>
-      <motion.p >Studying back-end development helped me realize my natural flair towards UI/UX design. This led me to explore <span>self-taught front-end development</span> and work towards my goal of becoming a <span>full-stack developer</span>. I aim to combine my skills in both areas and continue to learn and experiment with new technologies. </motion.p> <br />
-
-      <li>Recent technologies I've used:</li>
+      <motion.p >During my studies as a computer science student, I delved into back-end development and realized my natural <span>flair for UI/UX design</span>. Motivated by this realization, I began learning front-end development alongside my studies. <br /> 
+      <br/>
+      I aim to build upon my current back-end knowledge and combine it with my front-end skills, working towards becoming a <span>full-stack developer</span>. I am committed to explore and experiment with technologies in pursuit of building seamless and engaging user experiences.</motion.p> <br />
+      <p className='bold'>Recent technologies I've used:</p>
         <Technologies>
           <Social>
             <Circle/>
@@ -37,7 +38,7 @@ align-items: flex-start;
 justify-content: flex-start;
 flex: 3;
 margin-right: 2rem;
-p span{
+p span, .bold{
   font-family: var(--font-sans);
   color: var(--color-header);
 }
