@@ -18,6 +18,7 @@ function Wave() {
 }
 
 const WaveSvg = styled.svg`
+  z-index: -1;
   position: absolute;
   left: 0;
   stroke: ${props => props.theme.mainColor};

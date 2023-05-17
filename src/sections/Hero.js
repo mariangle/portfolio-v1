@@ -20,13 +20,13 @@ const HeroSection = () => {
                 </motion.div>
                 <Hide>
                     <motion.p variants={slideAnim.up}> 
-                    I build web-based solutions that prioritize functionality and user experience. I enjoy transforming ideas into reality by creating practical and visually appealing web applications.</motion.p>
+                    I build web-based solutions that prioritize functionality and user experience. I enjoy turning ideas into reality by creating practical and visually appealing web applications.</motion.p>
                 </Hide>
                 <ButtonContainer>
                     <Hide>
                         <a href="https://github.com/mariangle" target="_blank" rel="noreferrer">
                             <motion.button variants={slideAnim.up}>Github</motion.button>
-                        </a>
+                        </a>        
                     </Hide>
                 </ButtonContainer>
             </Description>
