@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faBars, faTimes, faSun } from '@fortawesome/free-solid-svg-icons';
 import { staggerAnim, slideAnim } from "../animation";
 import { motion } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
-import { faSun } from '@fortawesome/free-regular-svg-icons';
 
 
 const Nav = ( {toggleTheme, theme} ) => {

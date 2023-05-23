@@ -43,13 +43,14 @@ const Class = styled.div`
 
 const StyledNamespace = styled(motion.div)`
 border-radius: 20px;
-height: 18rem;
+max-height: 19rem;
 border: 4px solid var(--color-border);
 background: var(--color-bg);
 box-shadow: var(--color-shadow);
 padding: 2rem;
 transition: 0.1s ease-in-out;
 flex: 2;
+line-height: 130%;
 animation: float 3s infinite alternate;
 @keyframes float {
 	0% {

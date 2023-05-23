@@ -35,7 +35,7 @@ function Projects() {
           <Featured 
             video={studiebnb} 
             title="StudieBnB"
-            text="StudieBnb is a redesigned Airbnb clone. It offers users the ability to log in, book listings, and manage their own listings. The project was developed to explore the MERN stack and writing server-side code in JavaScript"
+            text="StudieBnb  offers users the ability to log in, book listings, and manage their own listings. The project was developed to explore the MERN stack and writing server-side code in JavaScript"
             link="https://github.com/mariangle/mern-booking-app"
             technologies={technologies2} />
         </FeaturedContainer >

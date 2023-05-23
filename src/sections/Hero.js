@@ -21,7 +21,7 @@ const HeroSection = () => {
                 <Hide>
                     <motion.p variants={slideAnim.up}> 
                     I build web-based solutions that prioritize functionality and user experience. I enjoy turning ideas into reality by creating practical and visually appealing web applications.</motion.p>
-                </Hide>
+                </Hide>     
                 <ButtonContainer>
                     <Hide>
                         <a href="https://github.com/mariangle" target="_blank" rel="noreferrer">

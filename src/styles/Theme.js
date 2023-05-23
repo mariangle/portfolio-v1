@@ -1,5 +1,5 @@
 import React from 'react';
-import {ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 const lightTheme = {
   backgroundColor: "#f5f5fd",
