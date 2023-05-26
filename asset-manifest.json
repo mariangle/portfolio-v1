@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-portfolio-styled-motion/static/css/main.af718c14.css",
-    "main.js": "/react-portfolio-styled-motion/static/js/main.d93a41fe.js",
+    "main.js": "/react-portfolio-styled-motion/static/js/main.d7fc3d0f.js",
     "static/js/787.1ed0c42c.chunk.js": "/react-portfolio-styled-motion/static/js/787.1ed0c42c.chunk.js",
     "static/media/studiebnb.mp4": "/react-portfolio-styled-motion/static/media/studiebnb.ed8912884e4a9ccc69ab.mp4",
     "static/media/ecommerce.mp4": "/react-portfolio-styled-motion/static/media/ecommerce.ea08f9c732acd2b6130f.mp4",
@@ -15,11 +15,11 @@
     "static/media/fa-v4compatibility.woff2": "/react-portfolio-styled-motion/static/media/fa-v4compatibility.68577e40f3e70067b5da.woff2",
     "index.html": "/react-portfolio-styled-motion/index.html",
     "main.af718c14.css.map": "/react-portfolio-styled-motion/static/css/main.af718c14.css.map",
-    "main.d93a41fe.js.map": "/react-portfolio-styled-motion/static/js/main.d93a41fe.js.map",
+    "main.d7fc3d0f.js.map": "/react-portfolio-styled-motion/static/js/main.d7fc3d0f.js.map",
     "787.1ed0c42c.chunk.js.map": "/react-portfolio-styled-motion/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.af718c14.css",
-    "static/js/main.d93a41fe.js"
+    "static/js/main.d7fc3d0f.js"
   ]
 }
